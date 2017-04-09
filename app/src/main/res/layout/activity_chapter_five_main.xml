@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity">
+    
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<com.example.androidqunyinhui.chapter.five.DragView-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="#432453"/>-->
+    <!--</LinearLayout>-->
+    
+    <com.example.androidqunyinhui.chapter.five.DragViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@color/colorAccent"/>
+    </com.example.androidqunyinhui.chapter.five.DragViewGroup>
+
+</LinearLayout>
