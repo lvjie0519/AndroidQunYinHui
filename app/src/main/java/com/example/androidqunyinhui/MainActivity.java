@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
+import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ChapterFiveMainActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_chapter_six).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChapterSixMainActivity.startActivity(MainActivity.this);
             }
         });
     }
