@@ -22,4 +22,9 @@
         android:gravity="center"
         android:text="点击我"/>
 
+    <com.example.androidqunyinhui.chapter.six.SelfDefineView6_4
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+
 </LinearLayout>
