@@ -35,6 +35,12 @@
             android:layout_height="wrap_content"
             android:text="第七章 动画机制与使用技巧" />
 
+        <Button
+            android:id="@+id/btn_chapter_ten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第十章 性能优化" />
+
 
 
     </LinearLayout>
