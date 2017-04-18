@@ -8,6 +8,7 @@ import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
 import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.chapter.ten.ChapterTenMainActivity;
+import com.example.androidqunyinhui.chapter.twelve.ChapterTwelveMainActivity;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ChapterTenMainActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_chapter_twelve).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChapterTwelveMainActivity.startActivity(MainActivity.this);
             }
         });
     }
