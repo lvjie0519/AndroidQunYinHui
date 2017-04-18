@@ -1,0 +1,167 @@
+package com.example.androidqunyinhui.test;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.TextUtils;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+
+/**
+ * Created by lvjie on 2017/4/18 0018.
+ */
+public class SelfTextView extends View{
+
+    private static final String TAG = "SelfTextView";
+
+    private String mText;
+    private String []mSplitText;        // 保存空格分割的字符串数组；
+    private PointX []mSplitPointX;      // 保存每个单词的开始x坐标和结束x坐标；
+    private int divider = 10;       // 每个单词之间的距离；
+
+    private Paint mTextPaint;
+
+    public SelfTextView(Context context) {
+        super(context);
+
+        init();
+    }
+
+    public SelfTextView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+
+        init();
+    }
+
+    public SelfTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+
+        init();
+    }
+
+    private void init(){
+        this.mTextPaint = new Paint();
+        setText("");
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        setSplitPointX();
+        int height = measureHeight(heightMeasureSpec);
+        setMeasuredDimension(this.mSplitPointX[this.mSplitPointX.length-1].endX, height);
+    }
+
+    private void setSplitPointX(){
+        int len = this.mSplitText.length;
+        this.mSplitPointX = new PointX[len];
+
+        int totalX = 1;
+        for(int i=0; i<len; i++){
+            this.mSplitPointX[i] = new PointX();
+            this.mSplitPointX[i].startX = totalX;
+            totalX += this.mTextPaint.measureText(this.mSplitText[i]);
+            if(i != len-1){
+                totalX += this.divider;
+            }else{
+                totalX += 1;
+            }
+            this.mSplitPointX[i].endX = totalX;
+        }
+
+    }
+
+    private int measureHeight(int height){
+        int result = 100;       // 默认值
+        int specMode = MeasureSpec.getMode(height);
+        int specSize = MeasureSpec.getSize(height);
+
+        // MeasureSpec.EXACTLY 表示xml中定义了精确值或者为match_parent
+        if(specMode == MeasureSpec.EXACTLY){
+            result = specSize;
+        }else{
+            Paint.FontMetrics fm = this.mTextPaint.getFontMetrics();
+            result = (int) (fm.bottom-fm.top)+1;
+        }
+
+        return  result;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        drawText(canvas);
+    }
+
+    private void drawText(Canvas canvas){
+        if(TextUtils.isEmpty(this.mText)){
+            return;
+        }
+
+        int len = this.mSplitText.length;
+        for(int i=0; i<len; i++){
+            canvas.drawText(this.mSplitText[i], this.mSplitPointX[i].startX, this.mTextPaint.getTextSize(), this.mTextPaint);
+        }
+    }
+
+    public void setTextColor(int color){
+        this.mTextPaint.setColor(color);
+    }
+
+    public void setTextSize(int size){
+        this.mTextPaint.setTextSize(size);
+    }
+
+    public void setText(String str){
+        this.mText = (null==str) ? "": str.trim();
+
+        this.mSplitText = this.mText.split("\\s+");
+    }
+
+    public void setDivider(int divider) {
+        this.divider = divider;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        if(event.getAction() == MotionEvent.ACTION_UP){
+            int x = (int) event.getX();
+            int len = this.mSplitPointX.length;
+            int positon = 0;
+            boolean flag = false;
+            for(int i=0; i<len; i++){
+                if(x>this.mSplitPointX[i].startX && x<this.mSplitPointX[i].endX-divider){
+                    positon = i;
+                    flag = true;
+                    break;
+                }
+            }
+            Log.i(TAG,"flag="+flag+"  positon="+positon);
+            if(flag && this.mClick != null){
+                this.mClick.onClick(this.mSplitText[positon]);
+            }
+
+        }
+
+        return true;
+    }
+
+    private OnClickListener mClick;
+
+    public void setOnClickListener(OnClickListener click) {
+        this.mClick = click;
+    }
+
+    public interface OnClickListener{
+        void onClick(String text);
+    }
+
+    private class PointX{
+        public int startX;
+        public int endX;
+    }
+
+}

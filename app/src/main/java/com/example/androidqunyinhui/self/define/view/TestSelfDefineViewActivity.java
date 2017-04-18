@@ -9,14 +9,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.test.SelfTextView;
 
 public class TestSelfDefineViewActivity extends AppCompatActivity {
 
     private LinearLayout layoutParent;
     private LinearLayout layoutChild;
     private TextView tvTouchMe;
+
+    private SelfTextView selfTextView;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, TestSelfDefineViewActivity.class);
@@ -58,6 +62,20 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 Log.i("lvjie","tvTouchMe-->onTouch()...");
                 return true;
+            }
+        });
+
+        this.selfTextView = (SelfTextView) findViewById(R.id.self_text_view);
+        this.selfTextView.setText("aa bb cccc   dddd  jjjjj  我爱  Java");
+        this.selfTextView.setTextSize(30);
+        this.selfTextView.setDivider(10);
+        this.selfTextView.setTextColor(getResources().getColor(R.color.colorAccent));
+
+        this.selfTextView.setOnClickListener(new SelfTextView.OnClickListener() {
+            @Override
+            public void onClick(String text) {
+                Log.i("lvjie","text="+text);
+                Toast.makeText(TestSelfDefineViewActivity.this, text, Toast.LENGTH_SHORT).show();
             }
         });
     }
