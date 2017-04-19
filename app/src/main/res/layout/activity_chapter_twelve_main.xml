@@ -82,6 +82,22 @@
             android:layout_marginTop="10dp"
             android:elevation="1dp"
             android:layout_gravity="center"/>
+        
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_gravity="center"
+            android:text="有界波纹"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="center"
+            android:text="无界波纹"
+            tools:targetApi="lollipop" />
 
     </LinearLayout>
 
