@@ -10,6 +10,7 @@ import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.chapter.ten.ChapterTenMainActivity;
 import com.example.androidqunyinhui.chapter.twelve.ChapterTwelveMainActivity;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
+import com.example.androidqunyinhui.test.LrcPlayerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_self_define).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TestSelfDefineViewActivity.startActivity(MainActivity.this);
+//                TestSelfDefineViewActivity.startActivity(MainActivity.this);
+                LrcPlayerActivity.startActivity(MainActivity.this);
             }
         });
 
