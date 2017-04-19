@@ -69,13 +69,20 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
         this.selfTextView.setText("aa bb cccc   dddd  jjjjj  我爱  Java");
         this.selfTextView.setTextSize(30);
         this.selfTextView.setDivider(10);
-        this.selfTextView.setTextColor(getResources().getColor(R.color.colorAccent));
+        this.selfTextView.setTextColor(getResources().getColor(R.color.colorAccent), false);
 
         this.selfTextView.setOnClickListener(new SelfTextView.OnClickListener() {
             @Override
             public void onClick(String text) {
                 Log.i("lvjie","text="+text);
                 Toast.makeText(TestSelfDefineViewActivity.this, text, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selfTextView.setTextColor(getResources().getColor(R.color.colorPrimary), true);
             }
         });
     }

@@ -19,6 +19,11 @@
             android:layout_height="wrap_content"
             android:text="进入自定义View" />
         <Button
+            android:id="@+id/btn_lrc_parse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lrc文件解析并播放" />
+        <Button
             android:id="@+id/btn_chapter_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

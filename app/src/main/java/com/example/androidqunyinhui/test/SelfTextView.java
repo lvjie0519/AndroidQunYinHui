@@ -2,6 +2,7 @@ package com.example.androidqunyinhui.test;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -19,7 +20,9 @@ public class SelfTextView extends View{
     private String mText;
     private String []mSplitText;        // 保存空格分割的字符串数组；
     private PointX []mSplitPointX;      // 保存每个单词的开始x坐标和结束x坐标；
-    private int divider = 10;       // 每个单词之间的距离；
+    private int mDivider = 10;       // 每个单词之间的距离；
+    private int mTextSize = 20;     // 默认字体大小
+    private int mTextColor = Color.BLACK;
 
     private Paint mTextPaint;
 
@@ -42,12 +45,17 @@ public class SelfTextView extends View{
     }
 
     private void init(){
+        Log.i(TAG,"init...");
         this.mTextPaint = new Paint();
+        this.mTextPaint.setTextSize(mTextSize);
+        this.mTextPaint.setColor(mTextColor);
         setText("");
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        Log.i(TAG,"onMeasure...");
+
         setSplitPointX();
         int height = measureHeight(heightMeasureSpec);
         setMeasuredDimension(this.mSplitPointX[this.mSplitPointX.length-1].endX, height);
@@ -63,7 +71,7 @@ public class SelfTextView extends View{
             this.mSplitPointX[i].startX = totalX;
             totalX += this.mTextPaint.measureText(this.mSplitText[i]);
             if(i != len-1){
-                totalX += this.divider;
+                totalX += this.mDivider;
             }else{
                 totalX += 1;
             }
@@ -92,6 +100,8 @@ public class SelfTextView extends View{
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        Log.i(TAG,"onDraw...");
+
         drawText(canvas);
     }
 
@@ -106,12 +116,23 @@ public class SelfTextView extends View{
         }
     }
 
-    public void setTextColor(int color){
-        this.mTextPaint.setColor(color);
+    public void setTextColor(int color, boolean isInvalidate){
+        if(mTextColor == color){
+            return;
+        }
+        mTextColor = color;
+        this.mTextPaint.setColor(mTextColor);
+        if(isInvalidate){
+            invalidate();
+        }
     }
 
     public void setTextSize(int size){
-        this.mTextPaint.setTextSize(size);
+        if(mTextSize == size){
+            return;
+        }
+        mTextSize = size;
+        this.mTextPaint.setTextSize(mTextSize);
     }
 
     public void setText(String str){
@@ -121,7 +142,7 @@ public class SelfTextView extends View{
     }
 
     public void setDivider(int divider) {
-        this.divider = divider;
+        this.mDivider = divider;
     }
 
     @Override
@@ -133,7 +154,7 @@ public class SelfTextView extends View{
             int positon = 0;
             boolean flag = false;
             for(int i=0; i<len; i++){
-                if(x>this.mSplitPointX[i].startX && x<this.mSplitPointX[i].endX-divider){
+                if(x>this.mSplitPointX[i].startX && x<this.mSplitPointX[i].endX-mDivider){
                     positon = i;
                     flag = true;
                     break;

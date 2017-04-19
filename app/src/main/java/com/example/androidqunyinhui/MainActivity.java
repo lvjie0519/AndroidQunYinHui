@@ -24,10 +24,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initView(){
+
         findViewById(R.id.btn_self_define).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                TestSelfDefineViewActivity.startActivity(MainActivity.this);
+                TestSelfDefineViewActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_lrc_parse).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 LrcPlayerActivity.startActivity(MainActivity.this);
             }
         });
