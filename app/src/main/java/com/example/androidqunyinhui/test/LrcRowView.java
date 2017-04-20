@@ -120,6 +120,7 @@ public class LrcRowView extends View{
         if(mTextColor == color){
             return;
         }
+        Log.i(TAG,"restart onDraw...mTextColor="+mTextColor+"   color="+color);
         mTextColor = color;
         this.mTextPaint.setColor(mTextColor);
         if(isInvalidate){

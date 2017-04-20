@@ -97,6 +97,42 @@ public class LrcView extends LinearLayout{
         this.mUnSelectTextColor = mUnSelectTextColor;
     }
 
+    public void selectLrcRowViewByTime(long time){
+        if(this.mLrcRowViews == null || this.mLrcRowViews.length==0){
+            return;
+        }
+        if(this.mDatas == null || this.mDatas.size() == 0){
+            return;
+        }
+
+        int len = this.mDatas.size();
+        for(int i=0; i<len; i++){
+            LrcRow current = this.mDatas.get(i);
+            LrcRow next = i + 1 == this.mDatas.size() ? null : this.mDatas.get(i + 1);
+            /**
+             *  正在播放的时间大于current行的歌词的时间而小于next行歌词的时间， 设置要高亮的行为current行
+             *  正在播放的时间大于current行的歌词，而current行为最后一句歌词时，设置要高亮的行为current行
+             */
+            if ((time >= current.getTime() && next != null && time < next.getTime())
+                    || (time > current.getTime() && next == null)){
+                clearLrcRowViewSelect();
+                this.mLrcRowViews[i].setTextColor(mSelectTextColor, true);
+                break;
+            }
+        }
+    }
+
+    public void test(int position){
+        this.mLrcRowViews[position].setTextColor(mSelectTextColor, true);
+    }
+
+    private void clearLrcRowViewSelect(){
+        int len = this.mLrcRowViews.length;
+        for(int i=0; i<len; i++){
+            this.mLrcRowViews[i].setTextColor(mUnSelectTextColor, true);
+        }
+    }
+
     private LrcRowView.OnClickListener mClick;
     public void setOnClickListener(LrcRowView.OnClickListener click) {
         this.mClick = click;

@@ -6,6 +6,12 @@
     android:orientation="vertical"
     tools:context="com.example.androidqunyinhui.test.LrcPlayerActivity">
 
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击"/>
+
     <com.example.androidqunyinhui.test.LrcView
         android:id="@+id/lrcview_show_english"
         android:layout_width="wrap_content"
