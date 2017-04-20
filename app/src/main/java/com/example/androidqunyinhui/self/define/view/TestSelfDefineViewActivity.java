@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.androidqunyinhui.R;
-import com.example.androidqunyinhui.test.SelfTextView;
+import com.example.androidqunyinhui.test.LrcRowView;
 
 public class TestSelfDefineViewActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
     private LinearLayout layoutChild;
     private TextView tvTouchMe;
 
-    private SelfTextView selfTextView;
+    private LrcRowView selfTextView;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, TestSelfDefineViewActivity.class);
@@ -65,13 +65,13 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
             }
         });
 
-        this.selfTextView = (SelfTextView) findViewById(R.id.self_text_view);
+        this.selfTextView = (LrcRowView) findViewById(R.id.self_text_view);
         this.selfTextView.setText("aa bb cccc   dddd  jjjjj  我爱  Java");
         this.selfTextView.setTextSize(30);
         this.selfTextView.setDivider(10);
         this.selfTextView.setTextColor(getResources().getColor(R.color.colorAccent), false);
 
-        this.selfTextView.setOnClickListener(new SelfTextView.OnClickListener() {
+        this.selfTextView.setOnClickListener(new LrcRowView.OnClickListener() {
             @Override
             public void onClick(String text) {
                 Log.i("lvjie","text="+text);

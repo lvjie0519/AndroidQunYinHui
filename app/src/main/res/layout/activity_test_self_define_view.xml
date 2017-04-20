@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="按钮"/>
-        <com.example.androidqunyinhui.test.SelfTextView
+        <com.example.androidqunyinhui.test.LrcRowView
             android:id="@+id/self_text_view"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"

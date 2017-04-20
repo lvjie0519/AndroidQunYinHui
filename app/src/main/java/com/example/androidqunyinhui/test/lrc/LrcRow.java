@@ -13,15 +13,15 @@ public class LrcRow implements Comparable<LrcRow>{
     public final static String TAG = "LrcRow";
 
     /** 该行歌词要开始播放的时间，格式如下：[02:34.14] */
-    public String strTime;
+    private String strTime;
 
     /** 该行歌词要开始播放的时间，由[02:34.14]格式转换为long型，
      * 即将2分34秒14毫秒都转为毫秒后 得到的long型值：time=02*60*1000+34*1000+14
      */
-    public long time;
+    private long time;
 
     /** 该行歌词的内容 */
-    public String content;
+    private String content;
 
     
     public LrcRow(){}

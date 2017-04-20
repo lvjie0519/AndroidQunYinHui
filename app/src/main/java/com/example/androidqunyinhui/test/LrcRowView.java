@@ -13,7 +13,7 @@ import android.view.View;
 /**
  * Created by lvjie on 2017/4/18 0018.
  */
-public class SelfTextView extends View{
+public class LrcRowView extends View{
 
     private static final String TAG = "SelfTextView";
 
@@ -26,19 +26,19 @@ public class SelfTextView extends View{
 
     private Paint mTextPaint;
 
-    public SelfTextView(Context context) {
+    public LrcRowView(Context context) {
         super(context);
 
         init();
     }
 
-    public SelfTextView(Context context, AttributeSet attrs) {
+    public LrcRowView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         init();
     }
 
-    public SelfTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LrcRowView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         init();
@@ -145,6 +145,7 @@ public class SelfTextView extends View{
         this.mDivider = divider;
     }
 
+    // TODO 当发生移动超过一定范围则，点击无效
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 

@@ -2,8 +2,11 @@ package com.example.androidqunyinhui.test;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.androidqunyinhui.R;
 import com.example.androidqunyinhui.test.lrc.LrcParseUtil;
@@ -19,6 +22,8 @@ public class LrcPlayerActivity extends AppCompatActivity {
     private List<LrcRow> mLrcRowEnglishList = new ArrayList<>();
     private List<LrcRow> mLrcRowChinaList = new ArrayList<>();
 
+    private LrcView mLrcView;
+
     public static void startActivity(Context context){
         Intent intent = new Intent(context, LrcPlayerActivity.class);
         context.startActivity(intent);
@@ -29,12 +34,37 @@ public class LrcPlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lrc_player);
 
+        initLrcData();
+        initView();
+
+    }
+
+    private void initLrcData(){
         String lrc = getContentFromAssets("demo01.lrc");
         List<LrcRow> lrcRowList = LrcParseUtil.getLrcRows(lrc);
         setLrcRowEnglishAndChinas(lrcRowList);
     }
 
+    private void initView(){
 
+        this.mLrcView = (LrcView) findViewById(R.id.lrcview_show_english);
+        this.mLrcView.setmTextSize(40);
+        this.mLrcView.setmDivider(10);
+        this.mLrcView.setmSelectTextColor(Color.BLUE);
+        this.mLrcView.setmUnSelectTextColor(Color.BLACK);
+        this.mLrcView.setOnClickListener(onClickListener);
+        this.mLrcView.setmDatas(this.mLrcRowEnglishList);
+    }
+
+
+    private LrcRowView.OnClickListener onClickListener = new LrcRowView.OnClickListener(){
+
+        @Override
+        public void onClick(String text) {
+            Toast.makeText(LrcPlayerActivity.this, text, Toast.LENGTH_SHORT).show();
+        }
+
+    };
 
     /**
      * 从assets目录下读取歌词文件内容
