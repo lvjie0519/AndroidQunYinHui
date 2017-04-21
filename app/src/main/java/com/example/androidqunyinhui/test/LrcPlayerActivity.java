@@ -1,9 +1,11 @@
 package com.example.androidqunyinhui.test;
 
 import android.app.Activity;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -81,7 +83,6 @@ public class LrcPlayerActivity extends Activity {
             }
         });
     }
-
 
     private LrcRowView.OnClickListener onClickListener = new LrcRowView.OnClickListener(){
 
@@ -167,9 +168,10 @@ public class LrcPlayerActivity extends Activity {
                 }
             });
             //准备播放歌曲
-            mPlayer.prepare();
+//            mPlayer.prepare();    // 该方法比较耗时，最好在线程中运行；运行完会回调onPrepared
+            mPlayer.prepareAsync();
             //开始播放歌曲
-            mPlayer.start();
+//            mPlayer.start();
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         } catch (IllegalStateException e) {

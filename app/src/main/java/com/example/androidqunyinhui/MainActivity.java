@@ -9,6 +9,7 @@ import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
 import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.chapter.ten.ChapterTenMainActivity;
 import com.example.androidqunyinhui.chapter.twelve.ChapterTwelveMainActivity;
+import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
 
@@ -36,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LrcPlayerActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_mediaplayer_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AudioPlayerDemoActivity.startActivity(MainActivity.this);
             }
         });
 
