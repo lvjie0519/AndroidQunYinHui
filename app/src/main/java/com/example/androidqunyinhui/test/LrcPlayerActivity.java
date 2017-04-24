@@ -41,6 +41,7 @@ public class LrcPlayerActivity extends Activity {
     private MediaPlayer mPlayer;
 
     private Button btnTest;
+    private boolean isFirst = true;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, LrcPlayerActivity.class);
@@ -79,7 +80,20 @@ public class LrcPlayerActivity extends Activity {
         this.btnTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mLrcView.test(2);
+//                mLrcView.test(2);
+                if(isFirst){
+                    Log.i("lvjie","isFirst="+isFirst);
+                    mTimer.cancel();
+                    isFirst = false;
+                }else{
+                    Log.i("lvjie","isFirst="+isFirst);
+                    if(mTimer == null){
+                        Log.i("lvjie","mTimer == null   isFirst="+isFirst);
+                        mTimer = new Timer();
+                        mTask = new LrcTask();
+                        mTimer.scheduleAtFixedRate(mTask, 0, mPalyTimerDuration);
+                    }
+                }
             }
         });
     }
