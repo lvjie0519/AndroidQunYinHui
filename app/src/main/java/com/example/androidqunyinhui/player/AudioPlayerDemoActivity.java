@@ -101,6 +101,7 @@ public class AudioPlayerDemoActivity extends AppCompatActivity {
     }
 
     private void startPreparePlayer(){
+
         if(isFirstStart){
             mediaPlayer.prepareAsync();
             isFirstStart = false;
@@ -110,10 +111,14 @@ public class AudioPlayerDemoActivity extends AppCompatActivity {
     }
 
     private void startPlayer(){
+
         int result = mAudioManager.requestAudioFocus(afChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
         // 判断请求焦点是否成功
         if(result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED){
+            Log.i("lvjie","焦点获取成功...");
             mediaPlayer.start();
+        }else{
+            Log.i("lvjie","焦点获取失败...");
         }
     }
 
@@ -141,30 +146,26 @@ public class AudioPlayerDemoActivity extends AppCompatActivity {
         @Override
         public void onAudioFocusChange(int focusChange) {
             switch (focusChange) {
-                //重新获取焦点
+                // 重新获取焦点
                 case AudioManager.AUDIOFOCUS_GAIN:
-                    //判断是否需要重新播放音乐
-                    if(mediaPlayer == null){
-                        initPlayer();
-                        startPreparePlayer();
-                    }else if(!mediaPlayer.isPlaying()){
-                        startPreparePlayer();
-                    }
+                    Log.i("lvjie","afChangeListener  重新获取焦点...");
+
                     break;
-                //暂时失去焦点
+                // 暂时失去焦点
                 case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
-                    //暂时失去焦点，暂停播放音乐（将needRestart设置为true）
-                    if(mediaPlayer.isPlaying()){
-                        mediaPlayer.pause();
-                    }
+                    Log.i("lvjie","afChangeListener  暂时失去焦点...");
+
                     break;
-                //时期焦点
+                //  可能长时间失去了这个音频的焦点
                 case AudioManager.AUDIOFOCUS_LOSS:
-                    //暂停播放音乐，不再继续播放
-                    if(mediaPlayer.isPlaying()){
-                        mediaPlayer.stop();
-                    }
-                    mAudioManager.abandonAudioFocus(afChangeListener);
+                    Log.i("lvjie","afChangeListener  可能长时间失去了这个音频的焦点...");
+                    //  暂停播放音乐，不再继续播放
+
+                    break;
+                // 你暂时的失去了音频的焦点,但是你允许继续用小音量播放音乐而不是完全杀掉音频.
+                case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
+                    Log.i("lvjie","afChangeListener  你暂时的失去了音频的焦点,但是你允许继续用小音量播放音乐而不是完全杀掉音频...");
+
                     break;
             }
 
