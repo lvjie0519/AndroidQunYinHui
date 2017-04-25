@@ -16,6 +16,7 @@
         android:id="@+id/lrcview_show_english"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
 

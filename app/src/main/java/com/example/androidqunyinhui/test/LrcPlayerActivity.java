@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -81,19 +82,7 @@ public class LrcPlayerActivity extends Activity {
             @Override
             public void onClick(View v) {
 //                mLrcView.test(2);
-                if(isFirst){
-                    Log.i("lvjie","isFirst="+isFirst);
-                    mTimer.cancel();
-                    isFirst = false;
-                }else{
-                    Log.i("lvjie","isFirst="+isFirst);
-                    if(mTimer == null){
-                        Log.i("lvjie","mTimer == null   isFirst="+isFirst);
-                        mTimer = new Timer();
-                        mTask = new LrcTask();
-                        mTimer.scheduleAtFixedRate(mTask, 0, mPalyTimerDuration);
-                    }
-                }
+                mPlayer.prepareAsync();
             }
         });
     }
@@ -162,7 +151,11 @@ public class LrcPlayerActivity extends Activity {
     public void beginLrcPlay(){
         mPlayer = new MediaPlayer();
         try {
+            String mp3File = "demo.mp3";
             mPlayer.setDataSource(getAssets().openFd("demo.mp3").getFileDescriptor());
+//            String directory = Environment.getExternalStorageDirectory().getPath();
+//            String mp3File = directory+"/Download/demo.mp3";
+//            mPlayer.setDataSource(mp3File);
             //准备播放歌曲监听
             mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 //准备完毕
@@ -178,14 +171,11 @@ public class LrcPlayerActivity extends Activity {
             //歌曲播放完毕监听
             mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 public void onCompletion(MediaPlayer mp) {
+                    Log.i("lvjie","player   onCompletion ...");
                     stopLrcPlay();
                 }
             });
-            //准备播放歌曲
-//            mPlayer.prepare();    // 该方法比较耗时，最好在线程中运行；运行完会回调onPrepared
-            mPlayer.prepareAsync();
-            //开始播放歌曲
-//            mPlayer.start();
+
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         } catch (IllegalStateException e) {
@@ -203,6 +193,10 @@ public class LrcPlayerActivity extends Activity {
         if(mTimer != null){
             mTimer.cancel();
             mTimer = null;
+        }
+
+        if(mPlayer != null){
+            mPlayer.stop();
         }
     }
 
