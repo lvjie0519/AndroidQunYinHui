@@ -2,12 +2,14 @@ package com.example.androidqunyinhui.self.define.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
     private LinearLayout layoutParent;
     private LinearLayout layoutChild;
     private TextView tvTouchMe;
+    private EditText editText;
 
     private LrcRowView selfTextView;
 
@@ -32,7 +35,13 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_self_define_view);
-        Log.i("lvjie","onCreate...");
+
+        String name = "";
+        if(savedInstanceState != null){
+            name = savedInstanceState.getString("name", "lvjie");
+        }
+        Log.i("lvjie","onCreate...name="+name);
+
         initView();
     }
 
@@ -89,6 +98,12 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.i("lvjie","onConfigurationChanged...");
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         Log.i("lvjie","onStart...");
@@ -107,9 +122,20 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String name = "";
+        if(savedInstanceState != null){
+            name = savedInstanceState.getString("name", "lvjie");
+        }
+        Log.i("lvjie","onRestoreInstanceState...name="+name);
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putString("name","jack");
         Log.i("lvjie","onSaveInstanceState...");
+        super.onSaveInstanceState(outState, outPersistentState);
     }
 
     @Override
