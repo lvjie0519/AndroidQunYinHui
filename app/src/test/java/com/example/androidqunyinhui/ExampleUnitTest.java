@@ -1,6 +1,16 @@
 package com.example.androidqunyinhui;
 
+import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.Student;
+
 import org.junit.Test;
+import org.junit.runners.Suite;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 import static org.junit.Assert.*;
 
@@ -23,6 +33,26 @@ public class ExampleUnitTest {
         }
 
         assertEquals(4, 2 + 2);
+    }
+
+    @Test
+    public void testSerializable() throws IOException, ClassNotFoundException {
+
+        String file = "E:\\test\\test.txt";
+
+//        Student student = new Student();
+//        student.setName("lvjie");
+//        student.setAge(21);
+//
+//        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(file));
+//        outputStream.writeObject(student);
+//        outputStream.close();
+
+        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(file));
+        Student student = (Student) inputStream.readObject();
+        System.out.println(student);
+        inputStream.close();
+
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.androidqunyinhui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
@@ -10,6 +11,7 @@ import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.chapter.ten.ChapterTenMainActivity;
 import com.example.androidqunyinhui.chapter.twelve.ChapterTwelveMainActivity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
+import com.example.androidqunyinhui.self.define.view.SelfData;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_self_define).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SelfData.getINSTANCE().setData("lvjie");
+                Toast.makeText(MainActivity.this, SelfData.getINSTANCE().getData(), Toast.LENGTH_SHORT).show();
                 TestSelfDefineViewActivity.startActivity(MainActivity.this);
             }
         });

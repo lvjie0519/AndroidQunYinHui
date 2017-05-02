@@ -20,14 +20,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".self.define.view.TestSelfDefineViewActivity" />
+        <activity
+            android:name=".self.define.view.TestSelfDefineViewActivity"
+            android:process="self.view" />
         <activity android:name=".chapter.five.ChapterFiveMainActivity" />
         <activity android:name=".chapter.six.ChapterSixMainActivity" />
         <activity android:name=".chapter.seven.ChapterSevenMainActivity" />
         <activity android:name=".chapter.ten.ChapterTenMainActivity" />
         <activity android:name=".chapter.twelve.ChapterTwelveMainActivity" />
         <activity android:name=".test.LrcPlayerActivity" />
-        <activity android:name=".player.AudioPlayerDemoActivity"></activity>
+        <activity android:name=".player.AudioPlayerDemoActivity" />
+        <activity android:name=".kaifayishutanshuo.Main2Activity"></activity>
     </application>
 
 </manifest>

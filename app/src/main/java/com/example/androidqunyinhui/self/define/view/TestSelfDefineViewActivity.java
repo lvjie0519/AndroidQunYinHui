@@ -54,6 +54,7 @@ public class TestSelfDefineViewActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Log.i("lvjie","layoutParent-->onTouch()...");
+                Toast.makeText(TestSelfDefineViewActivity.this, SelfData.getINSTANCE().getData(), Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
