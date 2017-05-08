@@ -10,6 +10,7 @@ import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
 import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.chapter.ten.ChapterTenMainActivity;
 import com.example.androidqunyinhui.chapter.twelve.ChapterTwelveMainActivity;
+import com.example.androidqunyinhui.kaifayishutanshuo.Main2Activity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
 import com.example.androidqunyinhui.self.define.view.SelfData;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
@@ -27,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initView(){
+
+        findViewById(R.id.btn_kaifayishutanshuo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Main2Activity.startActivity(MainActivity.this);
+            }
+        });
 
         findViewById(R.id.btn_self_define).setOnClickListener(new View.OnClickListener() {
             @Override
