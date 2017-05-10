@@ -1,5 +1,6 @@
 package com.example.androidqunyinhui;
 
+import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.ParcStudent;
 import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.Student;
 
 import org.junit.Test;
@@ -53,6 +54,15 @@ public class ExampleUnitTest {
         System.out.println(student);
         inputStream.close();
 
+    }
+
+    @Test
+    public void testParcelable() throws IOException {
+        String file = "E:\\test\\test.txt";
+        ParcStudent student = new ParcStudent("lvjie", 21, "15386207778");
+        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(file));
+        outputStream.writeObject(student);
+        outputStream.close();
     }
 
 }

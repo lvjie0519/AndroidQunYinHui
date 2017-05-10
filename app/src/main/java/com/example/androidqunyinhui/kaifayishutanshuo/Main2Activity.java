@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.ChapterTwoActivity;
+import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.ParcStudent;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -26,10 +28,12 @@ public class Main2Activity extends AppCompatActivity {
 
     public void initView(){
 
-        findViewById(R.id.btn_1).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_chapter_two).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("lvjie","btn1.....");
+                ParcStudent student = new ParcStudent("lvjie",21,"123456");
+                ChapterTwoActivity.startActivity(Main2Activity.this, student);
             }
         });
 
