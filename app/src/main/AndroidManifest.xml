@@ -31,7 +31,8 @@
         <activity android:name=".test.LrcPlayerActivity" />
         <activity android:name=".player.AudioPlayerDemoActivity" />
         <activity android:name=".kaifayishutanshuo.Main2Activity" />
-        <activity android:name=".kaifayishutanshuo.chapter.two.ChapterTwoActivity"></activity>
+        <activity android:name=".kaifayishutanshuo.chapter.two.ChapterTwoActivity" />
+        <activity android:name=".dbflow.DbFlowUseDemoActivity"></activity>
     </application>
 
 </manifest>

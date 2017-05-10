@@ -63,6 +63,12 @@
             android:layout_height="wrap_content"
             android:text="第十二章 安卓5.x新特性" />
 
+        <Button
+            android:id="@+id/btn_dbflow_use"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DBFLOW 数据库的使用" />
+
 
 
     </LinearLayout>
