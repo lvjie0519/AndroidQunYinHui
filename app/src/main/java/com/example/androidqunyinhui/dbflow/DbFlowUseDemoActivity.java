@@ -91,6 +91,7 @@ public class DbFlowUseDemoActivity extends AppCompatActivity {
         userInfo.setId(123l);
         userInfo.setName(temp);
         userInfo.setSex(0);
+        userInfo.setEmail("emial.com");
         userInfo.save();
 
         Log.i("lvjie","addInfo..."+"   "+temp);

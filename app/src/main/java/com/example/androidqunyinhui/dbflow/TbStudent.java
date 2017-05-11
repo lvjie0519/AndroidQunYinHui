@@ -22,6 +22,9 @@ public class TbStudent extends BaseModel{
     @Column(name = "sex")
     private int sex;
 
+    @Column(name = "email")
+    private String email;
+
 
     public Long getId() {
         return id;
@@ -47,8 +50,16 @@ public class TbStudent extends BaseModel{
         this.sex = sex;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
-        return "id: "+id+"    name: "+name+"   sex: "+sex;
+        return "id: "+id+"    name: "+name+"   sex: "+sex+"  email:"+email;
     }
 }
