@@ -19,8 +19,9 @@ public class Migration_2_TbStudent extends AlterTableMigration<TbStudent> {
 
     @Override
     public void onPreMigrate() {
-        Log.i("lvjie","onPreMigrate()..."+TbStudent_Table.email.getNameAlias().getNameAsKey());
-        addColumn(SQLiteType.TEXT, TbStudent_Table.email.getNameAlias().getNameAsKey());
+        Log.i("lvjie","onPreMigrate()..."+TbStudent_Table.class_grade.getNameAlias().getNameAsKey());
+//        addColumn(SQLiteType.TEXT, TbStudent_Table.email.getNameAlias().getNameAsKey());
+        addColumn(SQLiteType.TEXT, TbStudent_Table.class_grade.getNameAlias().getNameAsKey());
     }
 
 }

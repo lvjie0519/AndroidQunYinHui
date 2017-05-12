@@ -25,6 +25,8 @@ public class TbStudent extends BaseModel{
     @Column(name = "email")
     private String email;
 
+    @Column(name = "class_grade", typeConverter=ClassGrade.ClassGradeConverter.class)
+    private ClassGrade classGrade;
 
     public Long getId() {
         return id;
@@ -58,8 +60,22 @@ public class TbStudent extends BaseModel{
         this.email = email;
     }
 
+    public ClassGrade getClassGrade() {
+        return classGrade;
+    }
+
+    public void setClassGrade(ClassGrade classGrade) {
+        this.classGrade = classGrade;
+    }
+
     @Override
     public String toString() {
-        return "id: "+id+"    name: "+name+"   sex: "+sex+"  email:"+email;
+
+        String s = "";
+        if(classGrade != null){
+            s = classGrade.toString();
+        }
+
+        return "id: "+id+"    name: "+name+"   sex: "+sex+"  email:"+email+"  classGrade:"+s+"\n";
     }
 }

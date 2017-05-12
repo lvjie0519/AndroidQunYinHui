@@ -14,7 +14,6 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.raizlabs.android.dbflow.sql.language.Select;
 
 import java.util.List;
-import java.util.Random;
 
 public class DbFlowUseDemoActivity extends AppCompatActivity {
 
@@ -92,6 +91,11 @@ public class DbFlowUseDemoActivity extends AppCompatActivity {
         userInfo.setName(temp);
         userInfo.setSex(0);
         userInfo.setEmail("emial.com");
+
+        ClassGrade classGrade = new ClassGrade();
+        classGrade.setId(12);
+        classGrade.setName("一班");
+        userInfo.setClassGrade(classGrade);
         userInfo.save();
 
         Log.i("lvjie","addInfo..."+"   "+temp);
