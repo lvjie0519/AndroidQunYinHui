@@ -33,7 +33,8 @@
         <activity android:name=".player.AudioPlayerDemoActivity" />
         <activity android:name=".kaifayishutanshuo.Main2Activity" />
         <activity android:name=".kaifayishutanshuo.chapter.two.ChapterTwoActivity" />
-        <activity android:name=".dbflow.DbFlowUseDemoActivity"></activity>
+        <activity android:name=".dbflow.DbFlowUseDemoActivity" />
+        <activity android:name=".android.widget.recyclerview_demo.RecyclerviewDemoActivity"></activity>
     </application>
 
 </manifest>

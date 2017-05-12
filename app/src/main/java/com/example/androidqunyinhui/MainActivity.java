@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
 import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
@@ -99,6 +100,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DbFlowUseDemoActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_recyclerview_use).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecyclerviewDemoActivity.startActivity(MainActivity.this);
             }
         });
     }
