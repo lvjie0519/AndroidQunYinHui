@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- 访问网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -34,7 +37,8 @@
         <activity android:name=".kaifayishutanshuo.Main2Activity" />
         <activity android:name=".kaifayishutanshuo.chapter.two.ChapterTwoActivity" />
         <activity android:name=".dbflow.DbFlowUseDemoActivity" />
-        <activity android:name=".android.widget.recyclerview_demo.RecyclerviewDemoActivity"></activity>
+        <activity android:name=".android.widget.recyclerview_demo.RecyclerviewDemoActivity" />
+        <activity android:name=".glide.GlideDemoActivity"></activity>
     </application>
 
 </manifest>

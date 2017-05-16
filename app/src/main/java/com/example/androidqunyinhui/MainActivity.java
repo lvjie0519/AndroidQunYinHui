@@ -12,6 +12,7 @@ import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.chapter.ten.ChapterTenMainActivity;
 import com.example.androidqunyinhui.chapter.twelve.ChapterTwelveMainActivity;
 import com.example.androidqunyinhui.dbflow.DbFlowUseDemoActivity;
+import com.example.androidqunyinhui.glide.GlideDemoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.Main2Activity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
 import com.example.androidqunyinhui.self.define.view.SelfData;
@@ -107,6 +108,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RecyclerviewDemoActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_glide_use).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GlideDemoActivity.startActivity(MainActivity.this);
             }
         });
     }

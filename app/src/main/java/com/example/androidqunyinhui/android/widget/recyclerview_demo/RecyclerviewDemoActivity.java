@@ -44,6 +44,11 @@ public class RecyclerviewDemoActivity extends AppCompatActivity {
 
         mAdapter = new MyRvAdapter(this, mDatas);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        layoutManager.setReverseLayout(true);       // 恰好倒立过来；
+        this.rvTest.addItemDecoration(new RecycleViewDivider(this,
+                LinearLayoutManager.HORIZONTAL, 20, getResources().getColor(R.color.colorAccent)));
+        this.rvTest.addItemDecoration(new RecycleViewDivider(this,
+                LinearLayoutManager.HORIZONTAL, 20, getResources().getColor(R.color.colorPrimary)));
         rvTest.setLayoutManager(layoutManager);
         rvTest.setAdapter(mAdapter);
     }

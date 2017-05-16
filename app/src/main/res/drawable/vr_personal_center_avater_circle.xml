@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 实现功能： 圆形头像 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- 内部颜色  绿色-->
+    <!--<solid android:color="#61c4b0" /> -->
+    <!-- 圆角 -->
+    <corners android:radius="360dp"/>
+    <!-- padding: Button 里面的文字与Button边界的间隔  -->
+    <padding
+        android:left="2.8dp"
+        android:top="2.8dp"
+        android:right="2.8dp"
+        android:bottom="2.8dp"
+        />
+
+    <!-- 边框颜色 -->
+    <stroke
+    android:width="3dp"
+    android:color="#ffffff" />
+
+</shape>
