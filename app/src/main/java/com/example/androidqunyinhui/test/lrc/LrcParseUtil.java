@@ -89,6 +89,7 @@ public class LrcParseUtil{
          [02:45.69][02:42.20][02:37.69][01:10.60]就在记忆里画一个叉
          **/
         try{
+            Log.i("lvjie",standardLrcLine.indexOf("[")+"    "+standardLrcLine.indexOf("]"));
             if(standardLrcLine.indexOf("[") != 0 || standardLrcLine.indexOf("]") != 9 ){
                 return null;
             }

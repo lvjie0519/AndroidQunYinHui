@@ -26,14 +26,39 @@ public class ExampleUnitTest {
 
     @Test
     public void testString(){
-        String str = "";
-        String []array = str.split("\\s+");
-        System.out.println(array.length);
-        for(int i=0; i<array.length; i++ ){
-            System.out.println(array[i]);
+//        String str = "";
+//        String []array = str.split("\\s+");
+//        System.out.println(array.length);
+//        for(int i=0; i<array.length; i++ ){
+//            System.out.println(array[i]);
+//        }
+
+        String temp = "[00:05.27]Listen to the tape then answer this question here my name is lvjie  ## 听录音并回到问题";
+        if(temp.indexOf("[") != 0 || temp.indexOf("]") != 9 ){
+            System.out.println("**************");
+        }else{
+            System.out.println("##############");
         }
+        System.out.println(temp.indexOf("[")+"   "+temp.indexOf("]"));
 
         assertEquals(4, 2 + 2);
+    }
+
+    @Test
+    public void testArray(){
+        String string = "aaaaa bbb cc dd ";
+        String []array = string.split("\\s+");
+        int len = array.length;
+
+        String []tempArray = string.split("\\s+", (len>>1)+1);
+
+        int size = tempArray[tempArray.length-1].length();
+        String temp1 = string.substring(0, string.length()-size);
+        String temp2 = tempArray[tempArray.length-1];
+        System.out.println("temp1: "+temp1);
+        System.out.println("temp2: "+temp2);
+
+
     }
 
     @Test

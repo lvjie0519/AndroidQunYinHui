@@ -51,6 +51,8 @@ public class RecyclerviewDemoActivity extends AppCompatActivity {
                 LinearLayoutManager.HORIZONTAL, 20, getResources().getColor(R.color.colorPrimary)));
         rvTest.setLayoutManager(layoutManager);
         rvTest.setAdapter(mAdapter);
+
+
     }
 
 }

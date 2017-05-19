@@ -2,7 +2,9 @@ package com.example.androidqunyinhui.test;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.example.androidqunyinhui.test.lrc.LrcRow;
@@ -24,16 +26,14 @@ public class LrcView extends LinearLayout{
     private int mSelectTextColor = Color.BLUE;      // 默认选中状态字体的颜色
     private int mUnSelectTextColor = Color.BLACK;   // 默认未选中状态字体的颜色
 
-    public LrcView(Context context) {
-        super(context);
+    private int mScreenwidth = 0;          // 保存屏幕的宽度
 
-        init(context);
+    public LrcView(Context context) {
+        this(context, null);
     }
 
     public LrcView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-
-        init(context);
+        this(context, attrs, 0);
     }
 
     public LrcView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -44,6 +44,8 @@ public class LrcView extends LinearLayout{
 
     private void init(Context context){
         this.mContext = context;
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+        this.mScreenwidth = wm.getDefaultDisplay().getWidth();
         initData();
     }
 
@@ -60,10 +62,47 @@ public class LrcView extends LinearLayout{
         return mDatas;
     }
 
-    public void setmDatas(List<LrcRow> mDatas) {
-        this.mDatas = mDatas;
+    public void setmDatas(List<LrcRow> datas) {
+//        this.mDatas = datas;
 
+        this.mDatas = preProDatas(datas);
         setmLrcRowViews();
+    }
+
+    // 预处理数据
+    private List<LrcRow> preProDatas(List<LrcRow> datas){
+        List<LrcRow> tempDatas = new ArrayList<>();
+        Paint tempPaint = new Paint();
+        tempPaint.setTextSize(mTextSize);
+        int size = datas.size();
+        for(int i=0; i<size; i++){
+
+            String tempContent = datas.get(i).getContent()== null?"":datas.get(i).getContent();
+            String[] tempArray = tempContent.split("\\s+");
+            int width = (int) tempPaint.measureText(tempContent)+mDivider*tempArray.length;
+
+            if(width > mScreenwidth){
+                // 最多只做两行的处理
+                LrcRow lrcRow1 = datas.get(i);
+                LrcRow lrcRow2 = new LrcRow();
+                lrcRow2.setStrTime(lrcRow1.getStrTime());
+                lrcRow2.setTime(lrcRow1.getTime());
+
+                String []temp = tempContent.split("\\s+", (tempArray.length>>1)+1);
+
+                String temp1 = tempContent.substring(0, tempContent.length()-temp[temp.length-1].length());
+                String temp2 = temp[temp.length-1];
+
+                lrcRow1.setContent(temp1);
+                lrcRow2.setContent(temp2);
+                tempDatas.add(lrcRow1);
+                tempDatas.add(lrcRow2);
+            }else{
+                tempDatas.add(datas.get(i));
+            }
+        }
+
+        return tempDatas;
     }
 
     private void setmLrcRowViews() {
