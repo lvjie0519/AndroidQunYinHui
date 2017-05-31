@@ -79,6 +79,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Glide的使用" />
+        <Button
+            android:id="@+id/btn_leak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内存泄漏测试" />
 
 
 

@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- 访问网络权限 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyApplication"
@@ -38,7 +38,8 @@
         <activity android:name=".kaifayishutanshuo.chapter.two.ChapterTwoActivity" />
         <activity android:name=".dbflow.DbFlowUseDemoActivity" />
         <activity android:name=".android.widget.recyclerview_demo.RecyclerviewDemoActivity" />
-        <activity android:name=".glide.GlideDemoActivity"></activity>
+        <activity android:name=".glide.GlideDemoActivity" />
+        <activity android:name=".leak.LeakCanaryDemoActivity"></activity>
     </application>
 
 </manifest>
