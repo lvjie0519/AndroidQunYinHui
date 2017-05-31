@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.androidqunyinhui.R;
@@ -32,6 +33,7 @@ public class LrcPlayerActivity extends Activity {
     private List<LrcRow> mLrcRowChinaList = new ArrayList<>();
 
     private LrcView mLrcView;
+    private TextView tvChina;
 
     //更新歌词的频率，每秒更新一次
     private int mPalyTimerDuration = 1000;
@@ -62,7 +64,7 @@ public class LrcPlayerActivity extends Activity {
     }
 
     private void initLrcData(){
-        String lrc = getContentFromAssets("demo.lrc");
+        String lrc = getContentFromAssets("demo2.txt");
         List<LrcRow> lrcRowList = LrcParseUtil.getLrcRows(lrc);
         setLrcRowEnglishAndChinas(lrcRowList);
     }
@@ -85,6 +87,14 @@ public class LrcPlayerActivity extends Activity {
                 mPlayer.prepareAsync();
             }
         });
+
+        this.tvChina = (TextView) findViewById(R.id.tv_china);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (LrcRow lrcRow: mLrcRowChinaList) {
+            stringBuilder.append(lrcRow.getContent()).append("\n");
+        }
+        this.tvChina.setText(stringBuilder.toString());
+
     }
 
     private LrcRowView.OnClickListener onClickListener = new LrcRowView.OnClickListener(){
@@ -151,10 +161,10 @@ public class LrcPlayerActivity extends Activity {
     public void beginLrcPlay(){
         mPlayer = new MediaPlayer();
         try {
-            String mp3File = "demo.mp3";
-            mPlayer.setDataSource(getAssets().openFd("demo.mp3").getFileDescriptor());
+            String mp3File = "demo1.mp3";
+            mPlayer.setDataSource(getAssets().openFd("demo1.mp3").getFileDescriptor());
 //            String directory = Environment.getExternalStorageDirectory().getPath();
-//            String mp3File = directory+"/Download/demo.mp3";
+//            String mp3File = directory+"/Download/demo1.mp3";
 //            mPlayer.setDataSource(mp3File);
             //准备播放歌曲监听
             mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

@@ -44,13 +44,19 @@ public class GlideDemoActivity extends AppCompatActivity {
         mAnimation.setInterpolator(lin);
 
         iv_1 = (ImageView) findViewById(R.id.iv_1);
-        Glide.with(this)
-                .load(imgUrl)
-                .transform(new GlideCircleTransform(this))
-                .placeholder(R.drawable.img1)
-                .animate(mAnimator)
-                .into(iv_1);
-        iv_1.startAnimation(mAnimation);
+
+        findViewById(R.id.btn_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Glide.with(GlideDemoActivity.this)
+                        .load(imgUrl)
+                        .transform(new GlideCircleTransform(GlideDemoActivity.this))
+                        .placeholder(R.drawable.img1)
+                        .animate(mAnimator)
+                        .into(iv_1);
+                iv_1.startAnimation(mAnimation);
+            }
+        });
     }
 
     private ViewPropertyAnimation.Animator mAnimator = new ViewPropertyAnimation.Animator() {
