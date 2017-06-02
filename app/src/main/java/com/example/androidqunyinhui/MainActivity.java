@@ -19,6 +19,7 @@ import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
 import com.example.androidqunyinhui.self.define.view.SelfData;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
+import com.example.androidqunyinhui.viewpager_scrollview.ViewPagerDemoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -123,6 +124,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LeakCanaryDemoActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_viewpager_scrollview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewPagerDemoActivity.startActivity(MainActivity.this);
             }
         });
     }
