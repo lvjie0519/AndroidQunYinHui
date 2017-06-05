@@ -40,7 +40,8 @@
         <activity android:name=".android.widget.recyclerview_demo.RecyclerviewDemoActivity" />
         <activity android:name=".glide.GlideDemoActivity" />
         <activity android:name=".leak.LeakCanaryDemoActivity" />
-        <activity android:name=".viewpager_scrollview.ViewPagerDemoActivity"></activity>
+        <activity android:name=".viewpager_scrollview.ViewPagerDemoActivity" />
+        <activity android:name=".rxandroid.RxDemoActivity"></activity>
     </application>
 
 </manifest>

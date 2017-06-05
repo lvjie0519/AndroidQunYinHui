@@ -16,6 +16,7 @@ import com.example.androidqunyinhui.glide.GlideDemoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.Main2Activity;
 import com.example.androidqunyinhui.leak.LeakCanaryDemoActivity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
+import com.example.androidqunyinhui.rxandroid.RxDemoActivity;
 import com.example.androidqunyinhui.self.define.view.SelfData;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
@@ -131,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ViewPagerDemoActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_rx_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RxDemoActivity.startActivity(MainActivity.this);
             }
         });
     }
