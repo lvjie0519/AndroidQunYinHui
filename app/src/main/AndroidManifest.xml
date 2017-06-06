@@ -41,7 +41,8 @@
         <activity android:name=".glide.GlideDemoActivity" />
         <activity android:name=".leak.LeakCanaryDemoActivity" />
         <activity android:name=".viewpager_scrollview.ViewPagerDemoActivity" />
-        <activity android:name=".rxandroid.RxDemoActivity"></activity>
+        <activity android:name=".rxandroid.RxDemoActivity" />
+        <activity android:name=".kaifayishutanshuo.chapter.three.ThreeChapterDemoActivity"></activity>
     </application>
 
 </manifest>

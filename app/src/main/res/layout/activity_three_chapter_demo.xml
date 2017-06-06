@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.ThreeChapterDemoActivity">
+
+    <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroup
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="#232323"
+        android:gravity="center">
+        <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="事件分发"
+            android:background="@color/colorAccent"/>
+    </com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroup>
+
+
+</LinearLayout>

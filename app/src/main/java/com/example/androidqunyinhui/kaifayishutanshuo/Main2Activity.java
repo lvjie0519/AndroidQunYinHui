@@ -8,8 +8,10 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.ThreeChapterDemoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.ChapterTwoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.ParcStudent;
+import com.squareup.haha.perflib.Main;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -37,10 +39,10 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btn_2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_chapter_three).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("lvjie","btn2.....");
+                ThreeChapterDemoActivity.startActivity(Main2Activity.this);
             }
         });
 
