@@ -45,6 +45,9 @@ public class MyViewGroup extends LinearLayout{
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         boolean result = super.onInterceptTouchEvent(ev);
         Log.i("MyViewGroup","onInterceptTouchEvent-->result: "+result);
+        if(ev.getAction() == MotionEvent.ACTION_MOVE){
+            result = true;
+        }
         return result;
     }
 
