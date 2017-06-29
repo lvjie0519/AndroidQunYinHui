@@ -1,10 +1,8 @@
 package com.example.androidqunyinhui.glide;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,12 +15,13 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.ViewPropertyAnimation;
 import com.example.androidqunyinhui.R;
 
-public class GlideDemoActivity extends AppCompatActivity {
+public class GlideDemoActivity extends Activity {
 
     private String imgUrl = "http://r.v1.e.101.com/s/p/1016/847ed000400d4de098f434207ceeb099.jpg";
 
     private ImageView iv_1;
     private Animation mAnimation;
+    private ImageView ivGif;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, GlideDemoActivity.class);
@@ -57,7 +56,16 @@ public class GlideDemoActivity extends AppCompatActivity {
                 iv_1.startAnimation(mAnimation);
             }
         });
+
+        ivGif = (ImageView) findViewById(R.id.iv_gif);
+        findViewById(R.id.btn_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadGifPic();
+            }
+        });
     }
+
 
     private ViewPropertyAnimation.Animator mAnimator = new ViewPropertyAnimation.Animator() {
         @Override
@@ -66,6 +74,13 @@ public class GlideDemoActivity extends AppCompatActivity {
             view.startAnimation(mAnimation);
         }
     };
+
+    private void loadGifPic(){
+        Glide.with(this)
+                .load("http://p1.pstatp.com/large/166200019850062839d3")
+                .placeholder(R.drawable.img1)
+                .into(ivGif);
+    }
 
 
 }

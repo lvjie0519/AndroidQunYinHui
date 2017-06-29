@@ -11,6 +11,7 @@ import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
 import com.example.androidqunyinhui.chapter.six.ChapterSixMainActivity;
 import com.example.androidqunyinhui.chapter.ten.ChapterTenMainActivity;
 import com.example.androidqunyinhui.chapter.twelve.ChapterTwelveMainActivity;
+import com.example.androidqunyinhui.data_and_time.DataAndTimeTestActivity;
 import com.example.androidqunyinhui.dbflow.DbFlowUseDemoActivity;
 import com.example.androidqunyinhui.glide.GlideDemoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.Main2Activity;
@@ -139,6 +140,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RxDemoActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_date_time).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataAndTimeTestActivity.startActivity(MainActivity.this);
             }
         });
     }
