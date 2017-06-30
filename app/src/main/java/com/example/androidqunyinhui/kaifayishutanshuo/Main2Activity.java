@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.kaifayishutanshuo.chapter.eight.EightChapterActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.ThreeChapterDemoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.ChapterTwoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.chapter.two.ParcStudent;
@@ -43,6 +44,13 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ThreeChapterDemoActivity.startActivity(Main2Activity.this);
+            }
+        });
+
+        findViewById(R.id.btn_chapter_eight).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EightChapterActivity.startActivity(Main2Activity.this);
             }
         });
 

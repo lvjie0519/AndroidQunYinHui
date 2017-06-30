@@ -43,7 +43,8 @@
         <activity android:name=".viewpager_scrollview.ViewPagerDemoActivity" />
         <activity android:name=".rxandroid.RxDemoActivity" />
         <activity android:name=".kaifayishutanshuo.chapter.three.ThreeChapterDemoActivity" />
-        <activity android:name=".data_and_time.DataAndTimeTestActivity"></activity>
+        <activity android:name=".data_and_time.DataAndTimeTestActivity" />
+        <activity android:name=".kaifayishutanshuo.chapter.eight.EightChapterActivity"></activity>
     </application>
 
 </manifest>
