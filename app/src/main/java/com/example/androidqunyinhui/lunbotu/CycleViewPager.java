@@ -3,7 +3,6 @@ package com.example.androidqunyinhui.lunbotu;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Message;
@@ -44,7 +43,7 @@ public class CycleViewPager extends Fragment implements OnPageChangeListener {
 	private int WHEEL = 100; // 转动
 	private int WHEEL_WAIT = 101; // 等待
 	private ImageCycleViewListener mImageCycleViewListener;
-	private List<ADInfo> infos;
+	private List<BaseInfo> infos;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,7 +88,7 @@ public class CycleViewPager extends Fragment implements OnPageChangeListener {
 		return view;
 	}
 
-	public void setData(List<ImageView> views, List<ADInfo> list, ImageCycleViewListener listener) {
+	public void setData(List<ImageView> views, List<BaseInfo> list, ImageCycleViewListener listener) {
 		setData(views, list, listener, 0);
 	}
 
@@ -101,7 +100,7 @@ public class CycleViewPager extends Fragment implements OnPageChangeListener {
 	 * @param showPosition
 	 *            默认显示位置
 	 */
-	public void setData(List<ImageView> views, List<ADInfo> list, ImageCycleViewListener listener, int showPosition) {
+	public void setData(List<ImageView> views, List<BaseInfo> list, ImageCycleViewListener listener, int showPosition) {
 		mImageCycleViewListener = listener;
 		infos = list;
 		this.imageViews.clear();
@@ -396,6 +395,6 @@ public class CycleViewPager extends Fragment implements OnPageChangeListener {
 		 *
 		 * @param imageView
 		 */
-		public void onImageClick(ADInfo info, int postion, View imageView);
+		public void onImageClick(BaseInfo info, int postion, View imageView);
 	}
 }

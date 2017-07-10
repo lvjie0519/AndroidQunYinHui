@@ -19,8 +19,10 @@ public class ViewFactory {
 	public static ImageView getImageView(Context context, String url) {
 		ImageView imageView = (ImageView)LayoutInflater.from(context).inflate(
 				R.layout.view_banner, null);
-		Glide.with(context).load(url).into(imageView);
-//		ImageLoader.getInstance().displayImage(url, imageView);
+		Glide.with(context)
+				.load(url)
+				.placeholder(R.drawable.icon_default)
+				.into(imageView);
 		return imageView;
 	}
 }

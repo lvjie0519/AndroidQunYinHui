@@ -3,10 +3,10 @@ package com.example.androidqunyinhui.lunbotu;
 /**
  * 描述：广告信息</br>
  */
-public class ADInfo {
+public class ADInfo extends BaseInfo {
 	
 	String id = "";
-	String url = "";
+
 	String content = "";
 	String type = "";
 
@@ -16,14 +16,6 @@ public class ADInfo {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
 	}
 
 	public String getContent() {
