@@ -70,6 +70,7 @@ public class LunBoTuActivity extends AppCompatActivity {
         cycleViewPager.setTime(2000);
         //设置圆点指示图标组居中显示，默认靠右
         cycleViewPager.setIndicatorCenter();
+        cycleViewPager.setIndicatorsVisibility(View.INVISIBLE);
     }
 
     private CycleViewPager.ImageCycleViewListener mAdCycleViewListener = new CycleViewPager.ImageCycleViewListener() {

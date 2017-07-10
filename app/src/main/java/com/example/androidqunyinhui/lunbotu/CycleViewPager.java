@@ -157,6 +157,10 @@ public class CycleViewPager extends Fragment implements OnPageChangeListener {
 		indicatorLayout.setLayoutParams(params);
 	}
 
+	public void setIndicatorsVisibility(int visibility){
+		indicatorLayout.setVisibility(visibility);
+	}
+
 	/**
 	 * 是否循环，默认不开启，开启前，请将views的最前面与最后面各加入一个视图，用于循环
 	 * 
