@@ -51,12 +51,12 @@ public class LunBoTuActivity extends AppCompatActivity {
         }
 
         // 将最后一个ImageView添加进来
-        views.add(ViewFactory.getImageView(this, infos.get(infos.size() - 1).getUrl()));
+        views.add(ViewFactory.getImageView(this, "url1"));
         for (int i = 0; i < infos.size(); i++) {
-            views.add(ViewFactory.getImageView(this, infos.get(i).getUrl()));
+            views.add(ViewFactory.getImageView(this, "url1"));
         }
         // 将第一个ImageView添加进来
-        views.add(ViewFactory.getImageView(this, infos.get(0).getUrl()));
+        views.add(ViewFactory.getImageView(this, "url1"));
 
         // 设置循环，在调用setData方法前调用
         cycleViewPager.setCycle(true);

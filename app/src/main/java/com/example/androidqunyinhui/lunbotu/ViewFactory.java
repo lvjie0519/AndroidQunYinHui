@@ -22,6 +22,7 @@ public class ViewFactory {
 		Glide.with(context)
 				.load(url)
 				.placeholder(R.drawable.icon_default)
+				.error(R.drawable.icon_default)
 				.into(imageView);
 		return imageView;
 	}
