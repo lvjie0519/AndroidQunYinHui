@@ -44,7 +44,8 @@
         <activity android:name=".rxandroid.RxDemoActivity" />
         <activity android:name=".kaifayishutanshuo.chapter.three.ThreeChapterDemoActivity" />
         <activity android:name=".data_and_time.DataAndTimeTestActivity" />
-        <activity android:name=".kaifayishutanshuo.chapter.eight.EightChapterActivity"></activity>
+        <activity android:name=".kaifayishutanshuo.chapter.eight.EightChapterActivity" />
+        <activity android:name=".lunbotu.LunBoTuActivity"></activity>
     </application>
 
 </manifest>

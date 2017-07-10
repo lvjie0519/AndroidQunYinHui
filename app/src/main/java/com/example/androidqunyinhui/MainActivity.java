@@ -16,6 +16,7 @@ import com.example.androidqunyinhui.dbflow.DbFlowUseDemoActivity;
 import com.example.androidqunyinhui.glide.GlideDemoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.Main2Activity;
 import com.example.androidqunyinhui.leak.LeakCanaryDemoActivity;
+import com.example.androidqunyinhui.lunbotu.LunBoTuActivity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
 import com.example.androidqunyinhui.rxandroid.RxDemoActivity;
 import com.example.androidqunyinhui.self.define.view.SelfData;
@@ -147,6 +148,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DataAndTimeTestActivity.startActivity(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn_lun_bo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LunBoTuActivity.startActivity(MainActivity.this);
             }
         });
     }
