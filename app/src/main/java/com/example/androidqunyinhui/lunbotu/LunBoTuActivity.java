@@ -51,12 +51,12 @@ public class LunBoTuActivity extends AppCompatActivity {
         }
 
         // 将最后一个ImageView添加进来
-        views.add(ViewFactory.getImageView(this, "url1"));
+        views.add(ViewFactory.getImageView(this, infos.get(infos.size() - 1).getUrl()));
         for (int i = 0; i < infos.size(); i++) {
-            views.add(ViewFactory.getImageView(this, "url1"));
+            views.add(ViewFactory.getImageView(this, infos.get(i).getUrl()));
         }
         // 将第一个ImageView添加进来
-        views.add(ViewFactory.getImageView(this, "url1"));
+        views.add(ViewFactory.getImageView(this, infos.get(0).getUrl()));
 
         // 设置循环，在调用setData方法前调用
         cycleViewPager.setCycle(true);
@@ -70,7 +70,7 @@ public class LunBoTuActivity extends AppCompatActivity {
         cycleViewPager.setTime(2000);
         //设置圆点指示图标组居中显示，默认靠右
         cycleViewPager.setIndicatorCenter();
-        cycleViewPager.setIndicatorsVisibility(View.INVISIBLE);
+//        cycleViewPager.setIndicatorsVisibility(View.INVISIBLE);
     }
 
     private CycleViewPager.ImageCycleViewListener mAdCycleViewListener = new CycleViewPager.ImageCycleViewListener() {
