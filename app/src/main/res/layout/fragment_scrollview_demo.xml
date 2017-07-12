@@ -10,7 +10,16 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="滚动冲突吗"/>
-    
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="点击按钮"/>
+
+
     <ScrollView
         android:id="@+id/sv_1"
         android:layout_width="match_parent"
@@ -22,18 +31,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:background="#afb4db"
                 android:text="第一个条目"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:background="#f58f98"
                 android:text="第二个条目"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:background="#6f60aa"
                 android:text="第三个条目"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:background="#f7acbc"
                 android:text="第四个条目"/>
         </LinearLayout>
     </ScrollView>

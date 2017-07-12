@@ -12,9 +12,10 @@ import com.example.androidqunyinhui.R;
 
 public class ViewPagerDemoActivity extends AppCompatActivity {
 
+    public static boolean isCanScroll = true;
 
     private ViewPagerAdapter viewPagerAdapter;
-    private SelfViewPager viewPager;
+    private ViewPager viewPager;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, ViewPagerDemoActivity.class);
@@ -30,17 +31,16 @@ public class ViewPagerDemoActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        viewPager = (SelfViewPager) findViewById(R.id.vp_demo);
+        viewPager = (ViewPager) findViewById(R.id.vp_demo);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(0);
-//        viewPager
+        viewPager.setOffscreenPageLimit(5);
 
         viewPager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                viewPager.scrollTo(0,0);
-                return true;
+                return !isCanScroll;
             }
         });
     }
