@@ -6,18 +6,28 @@
     android:orientation="vertical"
     tools:context="com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.ThreeChapterDemoActivity">
 
-    <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroup
+    <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroupA
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:background="#232323"
         android:gravity="center">
-        <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyView
-            android:id="@+id/myview"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:text="事件分发"
-            android:background="@color/colorAccent"/>
-    </com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroup>
+
+        <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroupB
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:background="#988945"
+            android:gravity="center">
+
+            <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyView
+                android:id="@+id/myview"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="事件分发"
+                android:background="@color/colorAccent"/>
+
+        </com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroupB>
+
+    </com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroupA>
 
 
 </LinearLayout>

@@ -29,12 +29,12 @@ public class ThreeChapterDemoActivity extends AppCompatActivity {
     }
 
     public void initView(){
-        findViewById(R.id.myview).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i("myview","onClick....");
-            }
-        });
+//        findViewById(R.id.myview).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.i("myview","onClick....");
+//            }
+//        });
     }
 
 }

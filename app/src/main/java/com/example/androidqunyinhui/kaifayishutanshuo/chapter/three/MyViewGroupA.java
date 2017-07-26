@@ -9,22 +9,22 @@ import android.widget.LinearLayout;
 /**
  * Created by Administrator on 2017/6/6 0006.
  */
-public class MyViewGroup extends LinearLayout{
+public class MyViewGroupA extends LinearLayout{
 
-    public MyViewGroup(Context context) {
+    public MyViewGroupA(Context context) {
         super(context);
     }
 
-    public MyViewGroup(Context context, AttributeSet attrs) {
+    public MyViewGroupA(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MyViewGroupA(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     /**
-     * 用来进行事件的分发，如果时间能够传递到当前View，此方法一定会执行
+     * 用来进行事件的分发，如果事件能够传递到当前View，此方法一定会执行
      * 返回的结果受当前 View的onTouchEvent和下级View的onInterceptTouchEvent方法影响，表示是否消耗当前事件
      * @param ev
      * @return
@@ -32,7 +32,7 @@ public class MyViewGroup extends LinearLayout{
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         boolean result = super.dispatchTouchEvent(ev);
-        Log.i("MyViewGroup","dispatchTouchEvent-->result: "+result);
+        Log.i("MyViewGroupA","dispatchTouchEvent-->result: "+result);
         return result;
     }
 
@@ -44,10 +44,7 @@ public class MyViewGroup extends LinearLayout{
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         boolean result = super.onInterceptTouchEvent(ev);
-        Log.i("MyViewGroup","onInterceptTouchEvent-->result: "+result);
-        if(ev.getAction() == MotionEvent.ACTION_MOVE){
-            result = true;
-        }
+        Log.i("MyViewGroupA","onInterceptTouchEvent-->result: "+result);
         return result;
     }
 
@@ -60,7 +57,7 @@ public class MyViewGroup extends LinearLayout{
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = super.onTouchEvent(event);
-        Log.i("MyViewGroup","onTouchEvent-->result: "+result);
+        Log.i("MyViewGroupA","onTouchEvent-->result: "+result);
         return result;
     }
 

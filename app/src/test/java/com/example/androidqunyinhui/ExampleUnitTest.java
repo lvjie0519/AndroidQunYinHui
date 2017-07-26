@@ -90,4 +90,13 @@ public class ExampleUnitTest {
         outputStream.close();
     }
 
+    @Test
+    public void test2(){
+        String s = "张山张山";
+        String re = s.substring(0, 1);
+        String mi = s.substring(1, s.length());
+        System.out.println(re+"  "+mi);
+        System.out.println(re+mi.replaceAll(".","*"));
+    }
+
 }
