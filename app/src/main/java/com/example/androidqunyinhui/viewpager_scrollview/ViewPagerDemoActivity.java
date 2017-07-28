@@ -15,7 +15,7 @@ public class ViewPagerDemoActivity extends AppCompatActivity {
     public static boolean isCanScroll = true;
 
     private ViewPagerAdapter viewPagerAdapter;
-    private ViewPager viewPager;
+    private SelfViewPager viewPager;
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, ViewPagerDemoActivity.class);
@@ -31,7 +31,7 @@ public class ViewPagerDemoActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        viewPager = (ViewPager) findViewById(R.id.vp_demo);
+        viewPager = (SelfViewPager) findViewById(R.id.vp_demo);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(0);

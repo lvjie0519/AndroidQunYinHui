@@ -2,6 +2,7 @@ package com.example.androidqunyinhui.viewpager_scrollview;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
@@ -26,7 +27,23 @@ public class SelfScrollView extends ScrollView{
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        boolean result = super.onInterceptTouchEvent(ev);
+        Log.i("lvjie","SelfScrollView   onInterceptTouchEvent-->result="+result);
+        return result;
+    }
 
-        return super.onInterceptTouchEvent(ev);
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        boolean result = super.dispatchTouchEvent(ev);
+        Log.i("lvjie","SelfScrollView   dispatchTouchEvent-->result="+result);
+        return result;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        boolean result = super.onTouchEvent(ev);
+//        result = false;
+        Log.i("lvjie","SelfScrollView  onTouchEvent-->result="+result);
+        return result;
     }
 }
