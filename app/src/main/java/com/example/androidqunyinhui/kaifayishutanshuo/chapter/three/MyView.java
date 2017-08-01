@@ -34,10 +34,16 @@ public class MyView extends TextView{
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = super.onTouchEvent(event);
         Log.i("MyView","onTouchEvent-->result: "+result);
-        return result;
+        return true;
     }
 
-//    @Override
+    @Override
+    public void scrollTo(int x, int y) {
+        super.scrollTo(x, y);
+        Log.i("MyView","scrollTo-->x="+x+"  y="+y);
+    }
+
+    //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {
 //        if(event.getAction() == MotionEvent.ACTION_DOWN){
 //            Log.i("MyView","MotionEvent.ACTION_DOWN");

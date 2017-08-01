@@ -23,6 +23,7 @@ public class SelfViewPager extends ViewPager{
 
     @Override
     public void scrollTo(int x, int y) {
+        Log.i("lvjie","SelfViewPager   scrollTo-->x="+x+"   y="+y);
         if(isCanScroll){
             super.scrollTo(x, y);
         }
@@ -31,7 +32,7 @@ public class SelfViewPager extends ViewPager{
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         boolean result = super.onInterceptTouchEvent(ev);
-        Log.i("lvjie","SelfViewPager   onInterceptTouchEvent-->result="+result);
+        Log.i("lvjie","SelfViewPager   onInterceptTouchEvent-->result="+result+"    ev.getAction="+ev.getAction());
         return result;
     }
 
