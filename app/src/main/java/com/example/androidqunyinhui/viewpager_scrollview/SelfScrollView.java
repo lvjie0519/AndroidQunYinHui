@@ -46,4 +46,10 @@ public class SelfScrollView extends ScrollView{
         Log.i("lvjie","SelfScrollView  onTouchEvent-->result="+result);
         return result;
     }
+
+    @Override
+    public void scrollTo(int x, int y) {
+        super.scrollTo(x, y);
+        Log.i("lvjie","SelfScrollView   scrollTo-->x="+x+"   y="+y);
+    }
 }
