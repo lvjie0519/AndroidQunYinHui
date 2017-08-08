@@ -17,7 +17,8 @@ public class LunBoTuActivity extends AppCompatActivity {
 
     private List<ImageView> views = new ArrayList<ImageView>();
     private List<BaseInfo> infos = new ArrayList<BaseInfo>();
-    private CycleViewPager cycleViewPager;
+
+    private MyCycleViewPager myCycleViewPager;
 
     private String[] imageUrls = {"http://img.taodiantong.cn/v55183/infoimg/2013-07/130720115322ky.jpg",
             "http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg",
@@ -40,8 +41,7 @@ public class LunBoTuActivity extends AppCompatActivity {
 
     private void initialize() {
 
-        cycleViewPager = (CycleViewPager) getFragmentManager()
-                .findFragmentById(R.id.fragment_cycle_viewpager_content);
+        myCycleViewPager = (MyCycleViewPager) findViewById(R.id.my_cycle_view_pager);
 
         for(int i = 0; i < imageUrls.length; i ++){
             ADInfo info = new ADInfo();
@@ -59,17 +59,17 @@ public class LunBoTuActivity extends AppCompatActivity {
         views.add(ViewFactory.getImageView(this, infos.get(0).getUrl()));
 
         // 设置循环，在调用setData方法前调用
-        cycleViewPager.setCycle(true);
+        myCycleViewPager.setCycle(true);
 
         // 在加载数据前设置是否循环
-        cycleViewPager.setData(views, infos, mAdCycleViewListener);
+        myCycleViewPager.setData(views, infos, mAdCycleViewListener);
         //设置轮播
-        cycleViewPager.setWheel(true);
+        myCycleViewPager.setWheel(true);
 
         // 设置轮播时间，默认5000ms
-        cycleViewPager.setTime(2000);
+        myCycleViewPager.setTime(2000);
         //设置圆点指示图标组居中显示，默认靠右
-        cycleViewPager.setIndicatorCenter();
+        myCycleViewPager.setIndicatorCenter();
 //        cycleViewPager.setIndicatorsVisibility(View.INVISIBLE);
     }
 
@@ -77,7 +77,7 @@ public class LunBoTuActivity extends AppCompatActivity {
 
         @Override
         public void onImageClick(BaseInfo info, int position, View imageView) {
-            if (cycleViewPager.isCycle()) {
+            if (myCycleViewPager.isCycle()) {
                 position = position - 1;
                 Toast.makeText(LunBoTuActivity.this,
                         "position-->" + info.getUrl(), Toast.LENGTH_SHORT)
@@ -89,5 +89,9 @@ public class LunBoTuActivity extends AppCompatActivity {
     };
 
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        myCycleViewPager.destroy();
+    }
 }

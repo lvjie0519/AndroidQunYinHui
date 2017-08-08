@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
-
-    <fragment
-        android:id="@+id/fragment_cycle_viewpager_content"
-        android:name="com.example.androidqunyinhui.lunbotu.CycleViewPager"
+    
+    <com.example.androidqunyinhui.lunbotu.MyCycleViewPager
+        android:id="@+id/my_cycle_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="180dp" />
+        android:layout_height="180dp">
+
+    </com.example.androidqunyinhui.lunbotu.MyCycleViewPager>
+    
 
 
     <RelativeLayout
