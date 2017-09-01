@@ -58,7 +58,10 @@
         <activity android:name=".data_and_time.DataAndTimeTestActivity" />
         <activity android:name=".kaifayishutanshuo.chapter.eight.EightChapterActivity" />
         <activity android:name=".lunbotu.LunBoTuActivity" />
-        <activity android:name=".kaifayishutanshuo.chapter.twelve.TwelveMainActivity"></activity>
+        <activity android:name=".kaifayishutanshuo.chapter.twelve.TwelveMainActivity" />
+        <activity android:name=".event.EventBusDemoActivity" />
+        <activity android:name=".event.EventBusPage1Activity" />
+        <activity android:name=".event.EventBusPage2Activity"></activity>
     </application>
 
 </manifest>
