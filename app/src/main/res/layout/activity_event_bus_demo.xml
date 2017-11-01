@@ -24,4 +24,10 @@
         android:layout_height="wrap_content"
         android:text="显示接受的数据"/>
 
+    <EditText
+        android:id="@+id/et_test"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="30dp"/>
+
 </LinearLayout>
