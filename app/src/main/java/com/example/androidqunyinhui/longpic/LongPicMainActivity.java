@@ -2,6 +2,7 @@ package com.example.androidqunyinhui.longpic;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -68,6 +69,14 @@ public class LongPicMainActivity extends AppCompatActivity {
                 showType = 2;
             }
         });
+        findViewById(R.id.btn_create_water_long_pic).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerView.setVisibility(View.INVISIBLE);
+                scrollView.setVisibility(View.VISIBLE);
+                showType = 3;
+            }
+        });
         btnCreateLongPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +85,10 @@ public class LongPicMainActivity extends AppCompatActivity {
                     LongPicScreenShotUtil.saveBitmap(LongPicScreenShotUtil.getRecyclerViewBitMap(recyclerView), "pic");
                 }else if(showType == 2){
                     LongPicScreenShotUtil.saveBitmap(LongPicScreenShotUtil.getViewGroupBitmap(scrollView), "pic");
+                }else if(showType == 3){
+                    LongPicScreenShotUtil.saveBitmap(LongPicScreenShotUtil.createWaterMaskCenter(
+                                    LongPicScreenShotUtil.getViewGroupBitmap(scrollView),
+                            BitmapFactory.decodeResource(getResources(), R.drawable.twelve_bg)), "pic");
                 }
 
             }

@@ -91,5 +91,52 @@ public class LongPicScreenShotUtil {
         return bitmap;
     }
 
+//    public static Bitmap waterMark(Bitmap res, Bitmap mark){
+//        float scale = ((float) res.getWidth()) / mark.getWidth();
+//        mark = ImageUtil.scaleImg(mark, scale);
+//        int height = res.getHeight();
+//        Canvas canvas = new Canvas(res);
+//        int h = 0;
+//        while (h < height + mark.getHeight()) {
+//            canvas.drawBitmap(mark, 0, h, null);
+//            h = h + mark.getHeight();
+//        }
+//        return res;
+//    }
+
+    private static Bitmap createWaterMaskBitmap(Bitmap src, Bitmap watermark,
+                                                int paddingLeft, int paddingTop) {
+        if (src == null) {
+            return null;
+        }
+        int width = src.getWidth();
+        int height = src.getHeight();
+        //创建一个bitmap
+        Bitmap newb = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);// 创建一个新的和SRC长度宽度一样的位图
+        //将该图片作为画布
+        Canvas canvas = new Canvas(newb);
+        //在画布 0，0坐标上开始绘制原始图片
+        canvas.drawBitmap(src, 0, 0, null);
+        //在画布上绘制水印图片
+        canvas.drawBitmap(watermark, paddingLeft, paddingTop, null);
+        // 保存
+        canvas.save(Canvas.ALL_SAVE_FLAG);
+        // 存储
+        canvas.restore();
+        return newb;
+    }
+
+    /**
+     * 设置水印图片到中间
+     * @param src
+     * @param watermark
+     * @return
+     */
+    public static Bitmap createWaterMaskCenter(Bitmap src, Bitmap watermark) {
+        return createWaterMaskBitmap(src, watermark,
+                (src.getWidth() - watermark.getWidth()) / 2,
+                (src.getHeight() - watermark.getHeight()) / 2);
+    }
+
 
 }

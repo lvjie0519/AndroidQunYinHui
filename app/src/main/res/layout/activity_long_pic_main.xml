@@ -26,6 +26,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btn_create_water_long_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置水印"/>
+        <Button
             android:id="@+id/btn_show_pingtu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
