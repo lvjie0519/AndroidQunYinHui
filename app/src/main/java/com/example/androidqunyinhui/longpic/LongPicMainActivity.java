@@ -77,6 +77,14 @@ public class LongPicMainActivity extends AppCompatActivity {
                 showType = 3;
             }
         });
+        findViewById(R.id.btn_show_pingtu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerView.setVisibility(View.INVISIBLE);
+                scrollView.setVisibility(View.VISIBLE);
+                showType = 4;
+            }
+        });
         btnCreateLongPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +97,10 @@ public class LongPicMainActivity extends AppCompatActivity {
                     LongPicScreenShotUtil.saveBitmap(LongPicScreenShotUtil.createWaterMaskCenter(
                                     LongPicScreenShotUtil.getViewGroupBitmap(scrollView),
                             BitmapFactory.decodeResource(getResources(), R.drawable.twelve_bg)), "pic");
+                }else if(showType == 4){
+                    LongPicScreenShotUtil.saveBitmap(LongPicScreenShotUtil.mergeBitmap_TB(
+                            LongPicScreenShotUtil.getViewGroupBitmap(scrollView),
+                            BitmapFactory.decodeResource(getResources(), R.drawable.twelve_bg), true), "pic");
                 }
 
             }
