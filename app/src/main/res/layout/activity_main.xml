@@ -13,105 +13,111 @@
         android:orientation="vertical"
         >
 
-        <Button
-            android:id="@+id/btn_kaifayishutanshuo"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="开发艺术探索" />
+            android:visibility="gone"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_kaifayishutanshuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开发艺术探索" />
 
-        <Button
-            android:id="@+id/btn_self_define"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="进入自定义View" />
-        <Button
-            android:id="@+id/btn_lrc_parse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="lrc文件解析并播放" />
-        <Button
-            android:id="@+id/btn_mediaplayer_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="多媒体播放器" />
-        <Button
-            android:id="@+id/btn_chapter_five"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第五章 滑动分析" />
-        <Button
-            android:id="@+id/btn_chapter_six"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第六章 绘图机制和处理技巧" />
+            <Button
+                android:id="@+id/btn_self_define"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进入自定义View" />
+            <Button
+                android:id="@+id/btn_lrc_parse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lrc文件解析并播放" />
+            <Button
+                android:id="@+id/btn_mediaplayer_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多媒体播放器" />
+            <Button
+                android:id="@+id/btn_chapter_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第五章 滑动分析" />
+            <Button
+                android:id="@+id/btn_chapter_six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第六章 绘图机制和处理技巧" />
 
-        <Button
-            android:id="@+id/btn_chapter_seven"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第七章 动画机制与使用技巧" />
+            <Button
+                android:id="@+id/btn_chapter_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第七章 动画机制与使用技巧" />
 
-        <Button
-            android:id="@+id/btn_chapter_ten"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第十章 性能优化" />
+            <Button
+                android:id="@+id/btn_chapter_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第十章 性能优化" />
 
-        <Button
-            android:id="@+id/btn_chapter_twelve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="第十二章 安卓5.x新特性" />
+            <Button
+                android:id="@+id/btn_chapter_twelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第十二章 安卓5.x新特性" />
 
-        <Button
-            android:id="@+id/btn_dbflow_use"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DBFLOW 数据库的使用" />
+            <Button
+                android:id="@+id/btn_dbflow_use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DBFLOW 数据库的使用" />
 
-        <Button
-            android:id="@+id/btn_recyclerview_use"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recyclerview的使用" />
-        <Button
-            android:id="@+id/btn_glide_use"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Glide的使用" />
-        <Button
-            android:id="@+id/btn_leak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="内存泄漏测试" />
-        <Button
-            android:id="@+id/btn_viewpager_scrollview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="滚动事件测试" />
-        <Button
-            android:id="@+id/btn_rx_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="自定义实现Rx" />
+            <Button
+                android:id="@+id/btn_recyclerview_use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recyclerview的使用" />
+            <Button
+                android:id="@+id/btn_glide_use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glide的使用" />
+            <Button
+                android:id="@+id/btn_leak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="内存泄漏测试" />
+            <Button
+                android:id="@+id/btn_viewpager_scrollview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="滚动事件测试" />
+            <Button
+                android:id="@+id/btn_rx_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自定义实现Rx" />
 
-        <Button
-            android:id="@+id/btn_date_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="日期时间控件" />
+            <Button
+                android:id="@+id/btn_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日期时间控件" />
 
-        <Button
-            android:id="@+id/btn_lun_bo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="轮播图" />
+            <Button
+                android:id="@+id/btn_lun_bo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="轮播图" />
 
-        <Button
-            android:id="@+id/btn_event_bus_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EventBus 测试" />
+            <Button
+                android:id="@+id/btn_event_bus_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EventBus 测试" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_long_pic_test"
