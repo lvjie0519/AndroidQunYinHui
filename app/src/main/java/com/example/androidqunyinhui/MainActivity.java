@@ -17,6 +17,7 @@ import com.example.androidqunyinhui.event.EventBusDemoActivity;
 import com.example.androidqunyinhui.glide.GlideDemoActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.Main2Activity;
 import com.example.androidqunyinhui.leak.LeakCanaryDemoActivity;
+import com.example.androidqunyinhui.longpic.LongPicMainActivity;
 import com.example.androidqunyinhui.lunbotu.LunBoTuActivity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
 import com.example.androidqunyinhui.rxandroid.RxDemoActivity;
@@ -162,6 +163,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EventBusDemoActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_long_pic_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LongPicMainActivity.startActivity(MainActivity.this);
             }
         });
     }

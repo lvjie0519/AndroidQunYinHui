@@ -113,6 +113,12 @@
             android:layout_height="wrap_content"
             android:text="EventBus 测试" />
 
+        <Button
+            android:id="@+id/btn_long_pic_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="长图测试" />
+
 
 
     </LinearLayout>
