@@ -22,8 +22,21 @@
         android:layout_height="100dp"
         android:scaleType="fitXY"
         android:background="@drawable/vr_personal_center_avater_circle"/>
+
     <Button
         android:id="@+id/btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Glide加载图片"/>
+    <ImageView
+        android:id="@+id/iv_2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/vr_personal_center_avater_circle"/>
+
+    <Button
+        android:id="@+id/btn_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="加载Gif图片"/>

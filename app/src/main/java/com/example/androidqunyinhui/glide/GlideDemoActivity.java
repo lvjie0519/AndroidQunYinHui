@@ -20,6 +20,7 @@ public class GlideDemoActivity extends Activity {
     private String imgUrl = "http://r.v1.e.101.com/s/p/1016/847ed000400d4de098f434207ceeb099.jpg";
 
     private ImageView iv_1;
+    private ImageView iv_2;
     private Animation mAnimation;
     private ImageView ivGif;
 
@@ -43,6 +44,7 @@ public class GlideDemoActivity extends Activity {
         mAnimation.setInterpolator(lin);
 
         iv_1 = (ImageView) findViewById(R.id.iv_1);
+        iv_2 = (ImageView) findViewById(R.id.iv_2);
 
         findViewById(R.id.btn_1).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +59,17 @@ public class GlideDemoActivity extends Activity {
             }
         });
 
-        ivGif = (ImageView) findViewById(R.id.iv_gif);
         findViewById(R.id.btn_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Glide.with(GlideDemoActivity.this)
+                        .load(imgUrl)
+                        .into(iv_2);
+            }
+        });
+
+        ivGif = (ImageView) findViewById(R.id.iv_gif);
+        findViewById(R.id.btn_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadGifPic();
