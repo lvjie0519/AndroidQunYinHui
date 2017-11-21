@@ -90,6 +90,7 @@ public class GlideDemoActivity extends Activity {
         Glide.with(this)
                 .load("http://p1.pstatp.com/large/166200019850062839d3")
                 .placeholder(R.drawable.img1)
+                .skipMemoryCache(true)
                 .into(ivGif);
     }
 

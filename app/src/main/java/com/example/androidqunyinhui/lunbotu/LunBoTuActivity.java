@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.lunbotu.lunbotwo.LunBoTwoTestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,13 @@ public class LunBoTuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lun_bo_tu);
 
         initialize();
+
+        findViewById(R.id.btn_self_define_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LunBoTwoTestActivity.startActivity(LunBoTuActivity.this);
+            }
+        });
     }
 
     private void initialize() {

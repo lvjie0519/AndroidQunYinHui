@@ -11,7 +11,12 @@
 
     </com.example.androidqunyinhui.lunbotu.MyCycleViewPager>
     
-
+    <Button
+        android:id="@+id/btn_self_define_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="自定义View实现轮播图"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"

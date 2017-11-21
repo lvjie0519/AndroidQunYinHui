@@ -12,6 +12,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 import static org.junit.Assert.*;
 
@@ -97,6 +99,29 @@ public class ExampleUnitTest {
         String mi = s.substring(1, s.length());
         System.out.println(re+"  "+mi);
         System.out.println(re+mi.replaceAll(".","*"));
+    }
+
+    @Test
+    public void testLinkHashMap(){
+        // accessOrder 表示是否按顺序插入；
+        // Linked内部含有一个private transient Entry header;来记录元素插入的顺序或者是元素被访问的顺序。
+        // 利用这个线性结构的对象，可以帮助记录entry加入的前后顺序或者记录entry被访问的频率(最少被访问的entry靠前，最近访问的entry靠后)
+        LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>(100, 0.75f, true);
+        String string1 = linkedHashMap.put("111", "aaa");
+        String string2 = linkedHashMap.put("222", "bbb");
+        String string3 = linkedHashMap.put("333", "ccc");
+        // put 函数： 如果存在相同的key， 则返回之前的value
+        String string4 = linkedHashMap.put("222", "bbb");
+
+        System.out.println(string1+"  "+string2+"  "+string3+" "+string4);
+
+
+        Iterator iterator = linkedHashMap.keySet().iterator( );
+        while(iterator.hasNext( )) {
+            String key = (String) iterator.next( );
+            System.out.println(key);
+        }
+
     }
 
 }
