@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.androidqunyinhui.android.buttom_dialog.DialogTestActivity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
@@ -177,7 +178,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_vlayout_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                VlayoutTestActivity.startActivity(MainActivity.this);
+//                VlayoutTestActivity.startActivity(MainActivity.this);
+                DialogTestActivity.startActivity(MainActivity.this);
             }
         });
     }
