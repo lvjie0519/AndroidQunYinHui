@@ -64,7 +64,8 @@
         <activity android:name=".event.EventBusPage1Activity" />
         <activity android:name=".event.EventBusPage2Activity" />
         <activity android:name=".longpic.LongPicMainActivity" />
-        <activity android:name=".lunbotu.lunbotwo.LunBoTwoTestActivity"></activity>
+        <activity android:name=".lunbotu.lunbotwo.LunBoTwoTestActivity" />
+        <activity android:name=".vlayout.VlayoutTestActivity"></activity>
     </application>
 
 </manifest>

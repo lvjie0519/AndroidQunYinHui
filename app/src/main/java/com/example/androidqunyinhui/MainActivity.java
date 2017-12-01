@@ -25,6 +25,7 @@ import com.example.androidqunyinhui.self.define.view.SelfData;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
 import com.example.androidqunyinhui.viewpager_scrollview.ViewPagerDemoActivity;
+import com.example.androidqunyinhui.vlayout.VlayoutTestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -170,6 +171,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LongPicMainActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_vlayout_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VlayoutTestActivity.startActivity(MainActivity.this);
             }
         });
     }
