@@ -66,7 +66,8 @@
         <activity android:name=".longpic.LongPicMainActivity" />
         <activity android:name=".lunbotu.lunbotwo.LunBoTwoTestActivity" />
         <activity android:name=".vlayout.VlayoutTestActivity" />
-        <activity android:name=".android.buttom_dialog.DialogTestActivity"></activity>
+        <activity android:name=".android.buttom_dialog.DialogTestActivity" />
+        <activity android:name=".android.TextSpanTestActivity"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.androidqunyinhui.android.TextSpanTestActivity;
 import com.example.androidqunyinhui.android.buttom_dialog.DialogTestActivity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
@@ -179,7 +180,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                VlayoutTestActivity.startActivity(MainActivity.this);
-                DialogTestActivity.startActivity(MainActivity.this);
+//                DialogTestActivity.startActivity(MainActivity.this);
+                TextSpanTestActivity.startActivity(MainActivity.this);
             }
         });
     }
