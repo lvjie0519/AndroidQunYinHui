@@ -1,4 +1,4 @@
-package com.example.androidqunyinhui.rxandroid;
+package com.example.androidqunyinhui.selfrxandroid;
 
 import android.content.Context;
 import android.content.Intent;
