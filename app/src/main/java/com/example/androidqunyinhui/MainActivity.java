@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.androidqunyinhui.android.TextSpanTestActivity;
-import com.example.androidqunyinhui.android.buttom_dialog.DialogTestActivity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
@@ -22,12 +21,12 @@ import com.example.androidqunyinhui.leak.LeakCanaryDemoActivity;
 import com.example.androidqunyinhui.longpic.LongPicMainActivity;
 import com.example.androidqunyinhui.lunbotu.LunBoTuActivity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
-import com.example.androidqunyinhui.rxandroid.RxDemoActivity;
+import com.example.androidqunyinhui.rxandroid.RxAndroidTestActivity;
+import com.example.androidqunyinhui.selfrxandroid.RxDemoActivity;
 import com.example.androidqunyinhui.self.define.view.SelfData;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
 import com.example.androidqunyinhui.viewpager_scrollview.ViewPagerDemoActivity;
-import com.example.androidqunyinhui.vlayout.VlayoutTestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -145,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_rx_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RxDemoActivity.startActivity(MainActivity.this);
+                RxAndroidTestActivity.startActivity(MainActivity.this);
             }
         });
 
