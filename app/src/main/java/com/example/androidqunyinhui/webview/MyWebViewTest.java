@@ -7,17 +7,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.androidqunyinhui.R;
 
 public class MyWebViewTest extends AppCompatActivity {
 
-    private Button btnWebViewTest;
     private WebView webView;
 
     public static void startActivity(Context context){
@@ -36,7 +38,6 @@ public class MyWebViewTest extends AppCompatActivity {
     }
 
     private void initView(){
-        btnWebViewTest = (Button) findViewById(R.id.btn_webview_test);
         webView = (WebView) findViewById(R.id.wb_webview);
     }
 
@@ -48,6 +49,9 @@ public class MyWebViewTest extends AppCompatActivity {
         // 设置允许JS弹窗
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 
+        //在js中调用本地java方法
+        webView.addJavascriptInterface(new JsInterface(this), "AndroidWebView");
+
         // 先载入JS代码
         // 格式规定为:file:///android_asset/文件名.html
         webView.loadUrl("file:///android_asset/myweb.html");
@@ -55,7 +59,7 @@ public class MyWebViewTest extends AppCompatActivity {
     }
 
     private void bindListener(){
-        btnWebViewTest.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_webview_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 必须另开线程进行JS方法调用(否则无法调用)
@@ -68,6 +72,15 @@ public class MyWebViewTest extends AppCompatActivity {
                         webView.loadUrl("javascript:callJS()");
                     }
                 });
+            }
+        });
+
+        findViewById(R.id.btn_send_info_to_js).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String msg = ((EditText) findViewById(R.id.et_test)).getText().toString();
+                //调用js中的函数：showInfoFromJava(msg)
+                webView.loadUrl("javascript:showInfoFromJava('" + msg + "')");
             }
         });
 
@@ -93,6 +106,20 @@ public class MyWebViewTest extends AppCompatActivity {
             }
 
         });
+    }
+
+    private class JsInterface {
+        private Context mContext;
+
+        public JsInterface(Context context) {
+            this.mContext = context;
+        }
+
+        //在js中调用window.AndroidWebView.showInfoFromJs(name)，便会触发此方法。
+        @JavascriptInterface
+        public void showInfoFromJs(String name) {
+            Toast.makeText(mContext, name, Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

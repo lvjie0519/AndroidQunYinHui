@@ -6,11 +6,26 @@
     android:orientation="vertical"
     tools:context="com.example.androidqunyinhui.webview.MyWebViewTest">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/et_test"
+            android:layout_width="160dp"
+            android:layout_height="40dp" />
+        <Button
+            android:id="@+id/btn_send_info_to_js"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="向js传递数据"/>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn_webview_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="测试"/>
+        android:text="测试 alert"/>
 
     <WebView
         android:id="@+id/wb_webview"

@@ -1,18 +1,33 @@
 <!doctype html>
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-cn" />
 <head>
 	<title>this's a demo</title>
 
 	<script>
         function callJS(){
-     	 alert("Android调用了JS的callJS方法");
+     		alert("Android调用了JS的callJS方法");
    		}
+
+   		function sendInfoToJava(){
+			//调用android程序中的方法，并传递参数
+			var name = document.getElementById("name_input").value;
+			window.AndroidWebView.showInfoFromJs(name);
+		 }
+
+		  //在android代码中调用此方法
+		  function showInfoFromJava(msg){
+			alert("来自客户端的信息："+msg);
+		  }
     </script>
 
 </head>
 <body>
 <div>
-	<a>Start App</a><br/>
+	<p>测试Android WebView 与 Javascript 交互</p>
+	<input id = "name_input" class = "inputStyle" type="text"/>
+	<a class = "rect" onclick="sendInfoToJava()">JS调用Java</a>
 </div>
 </body>
 </html>
