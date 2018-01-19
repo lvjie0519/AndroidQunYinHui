@@ -27,6 +27,7 @@ import com.example.androidqunyinhui.self.define.view.SelfData;
 import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
 import com.example.androidqunyinhui.viewpager_scrollview.ViewPagerDemoActivity;
+import com.example.androidqunyinhui.webview.MyWebViewTest;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -180,7 +181,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                VlayoutTestActivity.startActivity(MainActivity.this);
 //                DialogTestActivity.startActivity(MainActivity.this);
-                TextSpanTestActivity.startActivity(MainActivity.this);
+//                TextSpanTestActivity.startActivity(MainActivity.this);
+                MyWebViewTest.startActivity(MainActivity.this);
+
             }
         });
     }

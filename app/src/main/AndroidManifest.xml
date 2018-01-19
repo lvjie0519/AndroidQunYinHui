@@ -68,7 +68,8 @@
         <activity android:name=".vlayout.VlayoutTestActivity" />
         <activity android:name=".android.buttom_dialog.DialogTestActivity" />
         <activity android:name=".android.TextSpanTestActivity" />
-        <activity android:name=".rxandroid.RxAndroidTestActivity"></activity>
+        <activity android:name=".rxandroid.RxAndroidTestActivity" />
+        <activity android:name=".webview.MyWebViewTest"></activity>
     </application>
 
 </manifest>
