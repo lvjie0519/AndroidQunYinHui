@@ -1,8 +1,8 @@
 package com.example.androidqunyinhui.rxandroid;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +20,7 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-public class RxAndroidTestActivity extends AppCompatActivity {
+public class RxAndroidTestActivity extends Activity {
 
     public static void startActivity(Context context){
         Intent intent = new Intent(context, RxAndroidTestActivity.class);
