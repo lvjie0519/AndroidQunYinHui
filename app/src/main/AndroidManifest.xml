@@ -69,7 +69,9 @@
         <activity android:name=".android.buttom_dialog.DialogTestActivity" />
         <activity android:name=".android.TextSpanTestActivity" />
         <activity android:name=".rxandroid.RxAndroidTestActivity" />
-        <activity android:name=".webview.MyWebViewTest"></activity>
+        <activity android:name=".webview.MyWebViewTest" />
+        <activity android:name=".android.coordinatorlayout.TestMainCoordinatorLayoutActivity" />
+        <activity android:name=".android.coordinatorlayout.NestedScrollViewAndRecyclerViewActivity"></activity>
     </application>
 
 </manifest>

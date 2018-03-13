@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.androidqunyinhui.android.TextSpanTestActivity;
+import com.example.androidqunyinhui.android.coordinatorlayout.TestMainCoordinatorLayoutActivity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
@@ -184,6 +185,13 @@ public class MainActivity extends AppCompatActivity {
 //                TextSpanTestActivity.startActivity(MainActivity.this);
                 MyWebViewTest.startActivity(MainActivity.this);
 
+            }
+        });
+
+        findViewById(R.id.btn_huadongqiantao_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TestMainCoordinatorLayoutActivity.startActivity(MainActivity.this);
             }
         });
     }
