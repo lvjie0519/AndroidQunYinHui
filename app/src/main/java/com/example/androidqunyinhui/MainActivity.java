@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.androidqunyinhui.android.PicOptimizeTestActivity;
 import com.example.androidqunyinhui.android.TextSpanTestActivity;
 import com.example.androidqunyinhui.android.coordinatorlayout.TestMainCoordinatorLayoutActivity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
@@ -191,7 +192,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_huadongqiantao_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TestMainCoordinatorLayoutActivity.startActivity(MainActivity.this);
+                // 滑动嵌套
+//                TestMainCoordinatorLayoutActivity.startActivity(MainActivity.this);
+                // 图片优化
+                PicOptimizeTestActivity.startActivity(MainActivity.this);
+
             }
         });
     }

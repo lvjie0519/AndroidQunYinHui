@@ -71,7 +71,11 @@
         <activity android:name=".rxandroid.RxAndroidTestActivity" />
         <activity android:name=".webview.MyWebViewTest" />
         <activity android:name=".android.coordinatorlayout.TestMainCoordinatorLayoutActivity" />
-        <activity android:name=".android.coordinatorlayout.NestedScrollViewAndRecyclerViewActivity"></activity>
+        <activity android:name=".android.coordinatorlayout.NestedScrollViewAndRecyclerViewActivity" />
+        <activity android:name=".android.coordinatorlayout.CoordinatorLayoutTestActivity" />
+        <activity
+            android:name=".android.PicOptimizeTestActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize|stateAlwaysHidden"></activity>
     </application>
 
 </manifest>

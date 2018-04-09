@@ -124,4 +124,10 @@ public class ExampleUnitTest {
 
     }
 
+    @Test
+    public void testStringFormat(){
+        String text = "asds%scd%s";
+        System.out.println(String.format(text, "123", null));
+    }
+
 }
