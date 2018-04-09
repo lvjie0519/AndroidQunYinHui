@@ -13,6 +13,8 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -47,4 +49,13 @@ dependencies {
         transitive = true
     }
     compile project(':android-architecture-components')
+
+    // retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    // 最基本的数据转化
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    // 结合RX使用
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    // Jackson
+    compile 'com.squareup.retrofit2:converter-jackson:2.0.2'
 }

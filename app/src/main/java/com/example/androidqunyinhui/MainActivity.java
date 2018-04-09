@@ -23,6 +23,7 @@ import com.example.androidqunyinhui.leak.LeakCanaryDemoActivity;
 import com.example.androidqunyinhui.longpic.LongPicMainActivity;
 import com.example.androidqunyinhui.lunbotu.LunBoTuActivity;
 import com.example.androidqunyinhui.player.AudioPlayerDemoActivity;
+import com.example.androidqunyinhui.retrofit.RetrofitMainTestActivity;
 import com.example.androidqunyinhui.rxandroid.RxAndroidTestActivity;
 import com.example.androidqunyinhui.selfrxandroid.RxDemoActivity;
 import com.example.androidqunyinhui.self.define.view.SelfData;
@@ -197,6 +198,13 @@ public class MainActivity extends AppCompatActivity {
                 // 图片优化
                 PicOptimizeTestActivity.startActivity(MainActivity.this);
 
+            }
+        });
+
+        findViewById(R.id.btn_retrofit_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RetrofitMainTestActivity.startActivity(MainActivity.this);
             }
         });
     }

@@ -75,7 +75,8 @@
         <activity android:name=".android.coordinatorlayout.CoordinatorLayoutTestActivity" />
         <activity
             android:name=".android.PicOptimizeTestActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize|stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateVisible|adjustResize|stateAlwaysHidden" />
+        <activity android:name=".retrofit.RetrofitMainTestActivity"></activity>
     </application>
 
 </manifest>
