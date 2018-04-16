@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.retrofit.model.JacksonTranslation;
 import com.example.androidqunyinhui.retrofit.model.Translation;
 import com.example.androidqunyinhui.retrofit.service.IApiService;
 
@@ -20,6 +21,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -54,6 +56,13 @@ public class RetrofitMainTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 initRetrofit();
+            }
+        });
+
+        findViewById(R.id.btn_retrofit_test02).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initRetrofit2();
             }
         });
     }
@@ -95,6 +104,35 @@ public class RetrofitMainTestActivity extends AppCompatActivity {
                     public void call(Translation translation) {
                         mProgressBar.setVisibility(View.GONE);
                         mTvContent.setText(translation.toString());
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        mProgressBar.setVisibility(View.GONE);
+                        Log.e("lvjie", throwable.toString());
+                    }
+                });
+
+    }
+
+    public void initRetrofit2(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASEURL)
+                .addConverterFactory(JacksonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+        IApiService apiService = retrofit.create(IApiService.class);  // 这里采用的是Java的动态代理模式
+
+        mProgressBar.setVisibility(View.VISIBLE);
+
+        apiService.getTranslationByRxAndJackson()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<JacksonTranslation>() {
+                    @Override
+                    public void call(JacksonTranslation jacksonTranslation) {
+                        mProgressBar.setVisibility(View.GONE);
+                        mTvContent.setText(jacksonTranslation.toString());
                     }
                 }, new Action1<Throwable>() {
                     @Override

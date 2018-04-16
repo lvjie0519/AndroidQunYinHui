@@ -1,5 +1,6 @@
 package com.example.androidqunyinhui.retrofit.service;
 
+import com.example.androidqunyinhui.retrofit.model.JacksonTranslation;
 import com.example.androidqunyinhui.retrofit.model.Translation;
 
 import retrofit2.Call;
@@ -20,5 +21,8 @@ public interface IApiService {
 
     @GET("ajax.php?a=fy&f=auto&t=auto&w=hello%20world")
     Observable<Translation> getTranslationByRx();
+
+    @GET("ajax.php?a=fy&f=auto&t=auto&w=hello%20world")
+    Observable<JacksonTranslation> getTranslationByRxAndJackson();
 
 }
