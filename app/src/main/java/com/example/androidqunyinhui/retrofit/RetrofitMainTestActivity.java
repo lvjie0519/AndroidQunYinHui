@@ -73,45 +73,44 @@ public class RetrofitMainTestActivity extends AppCompatActivity {
                 .baseUrl(BASEURL)
                 .addConverterFactory(GsonConverterFactory.create())  // 增加返回值为Gson的支持(以实体类返回)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-//                .addConverterFactory(JacksonConverterFactory.create())
                 .build();
         IApiService apiService = retrofit.create(IApiService.class);  // 这里采用的是Java的动态代理模式
 
         mProgressBar.setVisibility(View.VISIBLE);
 
-//        Call<Translation> call = apiService.getTranslationByCall(); //传入我们请求的键值对的值
-//        call.enqueue(new Callback<Translation>() {
-//            @Override
-//            public void onResponse(Call<Translation> call, Response<Translation> response) {
-//                mProgressBar.setVisibility(View.GONE);
-//                Log.i("lvjie","response.body="+response.headers().toString());
-//                Translation translation = response.body();
-//                mTvContent.setText(translation.toString());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Translation> call, Throwable t) {
-//                mProgressBar.setVisibility(View.GONE);
-//                mTvContent.setText(t.getMessage());
-//            }
-//        });
+        Call<Translation> call = apiService.getTranslationByCall(); //传入我们请求的键值对的值
+        call.enqueue(new Callback<Translation>() {
+            @Override
+            public void onResponse(Call<Translation> call, Response<Translation> response) {
+                mProgressBar.setVisibility(View.GONE);
+                Log.i("lvjie","response.body="+response.headers().toString());
+                Translation translation = response.body();
+                mTvContent.setText(translation.toString());
+            }
 
-        apiService.getTranslationByRx()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<Translation>() {
-                    @Override
-                    public void call(Translation translation) {
-                        mProgressBar.setVisibility(View.GONE);
-                        mTvContent.setText(translation.toString());
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
-                        mProgressBar.setVisibility(View.GONE);
-                        Log.e("lvjie", throwable.toString());
-                    }
-                });
+            @Override
+            public void onFailure(Call<Translation> call, Throwable t) {
+                mProgressBar.setVisibility(View.GONE);
+                mTvContent.setText(t.getMessage());
+            }
+        });
+
+//        apiService.getTranslationByRx()
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Action1<Translation>() {
+//                    @Override
+//                    public void call(Translation translation) {
+//                        mProgressBar.setVisibility(View.GONE);
+//                        mTvContent.setText(translation.toString());
+//                    }
+//                }, new Action1<Throwable>() {
+//                    @Override
+//                    public void call(Throwable throwable) {
+//                        mProgressBar.setVisibility(View.GONE);
+//                        Log.e("lvjie", throwable.toString());
+//                    }
+//                });
 
     }
 

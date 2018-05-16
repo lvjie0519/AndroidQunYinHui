@@ -141,6 +141,12 @@
             android:layout_height="wrap_content"
             android:text="Retrofit网络库学习"/>
 
+        <Button
+            android:id="@+id/btn_fragment_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fragment 测试"/>
+
 
     </LinearLayout>
 

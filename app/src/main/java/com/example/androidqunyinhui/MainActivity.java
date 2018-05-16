@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.androidqunyinhui.android.BannerTestActivity;
 import com.example.androidqunyinhui.android.PicOptimizeTestActivity;
 import com.example.androidqunyinhui.android.TextSpanTestActivity;
 import com.example.androidqunyinhui.android.coordinatorlayout.TestMainCoordinatorLayoutActivity;
+import com.example.androidqunyinhui.android.fragment.FragmentTestMainActivity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
@@ -31,6 +33,7 @@ import com.example.androidqunyinhui.self.define.view.TestSelfDefineViewActivity;
 import com.example.androidqunyinhui.test.LrcPlayerActivity;
 import com.example.androidqunyinhui.viewpager_scrollview.ViewPagerDemoActivity;
 import com.example.androidqunyinhui.webview.MyWebViewTest;
+import com.squareup.haha.perflib.Main;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -196,7 +199,9 @@ public class MainActivity extends AppCompatActivity {
                 // 滑动嵌套
 //                TestMainCoordinatorLayoutActivity.startActivity(MainActivity.this);
                 // 图片优化
-                PicOptimizeTestActivity.startActivity(MainActivity.this);
+//                PicOptimizeTestActivity.startActivity(MainActivity.this);
+                // 滑动Banner
+                BannerTestActivity.startActivity(MainActivity.this);
 
             }
         });
@@ -205,6 +210,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RetrofitMainTestActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_fragment_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTestMainActivity.startActivity(MainActivity.this);
             }
         });
     }

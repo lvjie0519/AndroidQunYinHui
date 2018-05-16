@@ -76,7 +76,9 @@
         <activity
             android:name=".android.PicOptimizeTestActivity"
             android:windowSoftInputMode="stateVisible|adjustResize|stateAlwaysHidden" />
-        <activity android:name=".retrofit.RetrofitMainTestActivity"></activity>
+        <activity android:name=".retrofit.RetrofitMainTestActivity" />
+        <activity android:name=".android.fragment.FragmentTestMainActivity" />
+        <activity android:name=".android.BannerTestActivity"></activity>
     </application>
 
 </manifest>
