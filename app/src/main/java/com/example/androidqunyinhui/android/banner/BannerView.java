@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -26,7 +27,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
 /**
- * Created by caijj on 2017/8/16.
+ * Created by lvjie on 2017/8/16.
  */
 public class BannerView extends FrameLayout implements ViewPager.OnPageChangeListener {
 
@@ -38,7 +39,6 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
     private TouchViewPager            mViewPager;
     private BannerAdapter             mAdapter;
     private LinkedList<BannerItem> mBannerItems = new LinkedList();
-//    private BannerItemsComparator mBannerItemsComparator;
     private Subscription          mAutoPlayModeSubscription;
 
     public BannerView(Context context) {
@@ -69,13 +69,13 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
         this.mViewPager.setListener(new TouchViewPager.onTouchListener() {
             public void onTouchEvent(MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
-                    case 0:
+                    case MotionEvent.ACTION_DOWN:
                         if (BannerView.this.mParams.autoPlayMode) {
                             BannerView.this.stopAutoPlayInternal();
                         }
                         break;
-                    case 1:
-                    case 6:
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_POINTER_UP:
                         if (BannerView.this.mParams.autoPlayMode) {
                             BannerView.this.stopAutoPlayInternal();
                             BannerView.this.startAutoPlayInternal();
@@ -84,8 +84,8 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
 
             }
         });
-        this.addView(this.mViewPager, new LayoutParams(-1, -1));
-//        this.mBannerItemsComparator = new BannerItemsComparator();
+        this.addView(this.mViewPager, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
         if (!this.mParams.cycleMode) {
             this.mParams.initPosition = 0;
         }
@@ -135,17 +135,19 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
     }
 
     private void startAutoPlayInternal() {
-        this.mAutoPlayModeSubscription = Observable.interval(this.mParams.intervalTime, TimeUnit.MILLISECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Long>() {
-            public void call(Long aLong) {
-                if (BannerView.this.mAdapter != null && BannerView.this.mParams.autoPlayMode) {
-                    int position = BannerView.this.mViewPager.getCurrentItem();
-                    ++position;
-                    position %= BannerView.this.mAdapter.getCount();
-                    BannerView.this.mViewPager.setCurrentItem(position, true);
-                }
+        this.mAutoPlayModeSubscription = Observable.interval(this.mParams.intervalTime, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<Long>() {
+                    public void call(Long aLong) {
+                        if (BannerView.this.mAdapter != null && BannerView.this.mParams.autoPlayMode) {
+                            int position = BannerView.this.mViewPager.getCurrentItem();
+                            ++position;
+                            position %= BannerView.this.mAdapter.getCount();
+                            BannerView.this.mViewPager.setCurrentItem(position, true);
+                        }
 
-            }
-        });
+                    }
+                });
         Log.d("BannerView", "startAutoPlayInternal");
     }
 
