@@ -10,6 +10,7 @@ import com.example.androidqunyinhui.android.PicOptimizeTestActivity;
 import com.example.androidqunyinhui.android.TextSpanTestActivity;
 import com.example.androidqunyinhui.android.coordinatorlayout.TestMainCoordinatorLayoutActivity;
 import com.example.androidqunyinhui.android.fragment.FragmentTestMainActivity;
+import com.example.androidqunyinhui.android.personface.AutioTakeActiity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
 import com.example.androidqunyinhui.chapter.five.ChapterFiveMainActivity;
 import com.example.androidqunyinhui.chapter.seven.ChapterSevenMainActivity;
@@ -217,6 +218,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FragmentTestMainActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_person_face_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AutioTakeActiity.startActivity(MainActivity.this);
             }
         });
     }

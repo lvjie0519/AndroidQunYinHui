@@ -147,6 +147,12 @@
             android:layout_height="wrap_content"
             android:text="Fragment 测试"/>
 
+        <Button
+            android:id="@+id/btn_person_face_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人脸识别"/>
+
 
     </LinearLayout>
 

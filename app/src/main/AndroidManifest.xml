@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- 访问网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -78,7 +79,10 @@
             android:windowSoftInputMode="stateVisible|adjustResize|stateAlwaysHidden" />
         <activity android:name=".retrofit.RetrofitMainTestActivity" />
         <activity android:name=".android.fragment.FragmentTestMainActivity" />
-        <activity android:name=".android.BannerTestActivity"></activity>
+        <activity android:name=".android.BannerTestActivity" />
+        <activity android:name=".android.personface.AutioTakeActiity" />
+        <activity android:name=".android.personface.AutioTakePhotoActivity" />
+        <activity android:name=".android.personface.CameraTestActivity"></activity>
     </application>
 
 </manifest>
