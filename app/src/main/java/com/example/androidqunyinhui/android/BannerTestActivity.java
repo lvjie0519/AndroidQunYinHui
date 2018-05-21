@@ -14,6 +14,8 @@ import java.util.List;
 
 public class BannerTestActivity extends AppCompatActivity {
 
+    private BannerView mBannerView;
+
     public static void startActivity(Context context){
         Intent intent = new Intent(context, BannerTestActivity.class);
         context.startActivity(intent);
@@ -28,7 +30,7 @@ public class BannerTestActivity extends AppCompatActivity {
     }
 
     private void initBanner(){
-        BannerView mBannerView = (BannerView) findViewById(R.id.banner_view);
+        mBannerView = (BannerView) findViewById(R.id.banner_view);
         List<BannerItem> bannerItems = new ArrayList<>();
         BannerItem bannerItem = new BannerItem(R.drawable.slp_sdk_home_banner_1, "");
         bannerItems.add(bannerItem);
@@ -42,4 +44,9 @@ public class BannerTestActivity extends AppCompatActivity {
         mBannerView.startAutoPlay();
     }
 
+    @Override
+    protected void onDestroy() {
+        mBannerView.stopAutoPlay();
+        super.onDestroy();
+    }
 }
