@@ -8,7 +8,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.camera2.CameraDevice;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -45,8 +47,14 @@ public class AutioTakeActiity extends AppCompatActivity {
         getPerssiom();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void testCamera(View view){
         CameraTestActivity.startActivity(this);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void testCamera2(View view){
+        CameraTest2Activity.startActivity(this);
     }
 
 

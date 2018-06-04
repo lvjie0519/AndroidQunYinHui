@@ -19,6 +19,11 @@
         android:layout_height="wrap_content"
         android:text="相机相关用法测试"
         android:onClick="testCamera"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="相机相关用法测试2"
+        android:onClick="testCamera2"/>
 
     <ImageView
         android:id="@+id/ima"

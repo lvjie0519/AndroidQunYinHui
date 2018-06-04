@@ -82,7 +82,8 @@
         <activity android:name=".android.BannerTestActivity" />
         <activity android:name=".android.personface.AutioTakeActiity" />
         <activity android:name=".android.personface.AutioTakePhotoActivity" />
-        <activity android:name=".android.personface.CameraTestActivity"></activity>
+        <activity android:name=".android.personface.CameraTestActivity" />
+        <activity android:name=".android.personface.CameraTest2Activity"></activity>
     </application>
 
 </manifest>
