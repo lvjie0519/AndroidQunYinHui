@@ -58,4 +58,7 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
     // Jackson
     compile 'com.squareup.retrofit2:converter-jackson:2.0.2'
+
+    // 二维码相关
+    compile 'com.google.zxing:core:3.2.1'
 }

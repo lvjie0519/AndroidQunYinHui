@@ -83,7 +83,8 @@
         <activity android:name=".android.personface.AutioTakeActiity" />
         <activity android:name=".android.personface.AutioTakePhotoActivity" />
         <activity android:name=".android.personface.CameraTestActivity" />
-        <activity android:name=".android.personface.CameraTest2Activity"></activity>
+        <activity android:name=".android.personface.CameraTest2Activity" />
+        <activity android:name=".android.qr_code.QRCodeTestActivity"></activity>
     </application>
 
 </manifest>
