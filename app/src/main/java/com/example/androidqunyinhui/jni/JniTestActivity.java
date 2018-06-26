@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,10 +17,6 @@ public class JniTestActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
-    static {
-        //名字必须和build.gradle中的moduleName一致
-        System.loadLibrary("MyFirstJinTest");
-    }
 
     private TextView tvShowInfo;
 
