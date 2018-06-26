@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import rx.Observable;
+import rx.Observer;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -100,14 +101,19 @@ public class RxAndroidTestActivity extends Activity {
             }
         }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<String>() {
+                .subscribe(new Observer<String>() {
                     @Override
-                    public void call(String s) {
+                    public void onCompleted() {
 
                     }
-                }, new Action1<Throwable>() {
+
                     @Override
-                    public void call(Throwable throwable) {
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
 
                     }
                 });

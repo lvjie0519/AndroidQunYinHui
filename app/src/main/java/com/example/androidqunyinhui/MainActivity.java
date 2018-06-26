@@ -22,6 +22,7 @@ import com.example.androidqunyinhui.data_and_time.DataAndTimeTestActivity;
 import com.example.androidqunyinhui.dbflow.DbFlowUseDemoActivity;
 import com.example.androidqunyinhui.event.EventBusDemoActivity;
 import com.example.androidqunyinhui.glide.GlideDemoActivity;
+import com.example.androidqunyinhui.jni.JniTestActivity;
 import com.example.androidqunyinhui.kaifayishutanshuo.Main2Activity;
 import com.example.androidqunyinhui.leak.LeakCanaryDemoActivity;
 import com.example.androidqunyinhui.longpic.LongPicMainActivity;
@@ -233,6 +234,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 QRCodeTestActivity.startActivity(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn_jni_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JniTestActivity.startActivity(MainActivity.this);
             }
         });
     }
