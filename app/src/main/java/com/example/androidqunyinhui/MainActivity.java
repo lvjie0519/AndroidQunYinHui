@@ -10,6 +10,7 @@ import com.example.androidqunyinhui.android.PicOptimizeTestActivity;
 import com.example.androidqunyinhui.android.TextSpanTestActivity;
 import com.example.androidqunyinhui.android.coordinatorlayout.TestMainCoordinatorLayoutActivity;
 import com.example.androidqunyinhui.android.fragment.FragmentTestMainActivity;
+import com.example.androidqunyinhui.android.newprocess.NewProcessTestActivity;
 import com.example.androidqunyinhui.android.personface.AutioTakeActiity;
 import com.example.androidqunyinhui.android.qr_code.QRCodeTestActivity;
 import com.example.androidqunyinhui.android.widget.recyclerview_demo.RecyclerviewDemoActivity;
@@ -239,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_jni_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JniTestActivity.startActivity(MainActivity.this);
+                NewProcessTestActivity.startActivity(MainActivity.this);
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.example.androidqunyinhui.jni;
+package com.example.androidqunyinhui.android.newprocess;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -7,36 +7,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.jni.JniTestActivity;
 
-public class JniTestActivity extends AppCompatActivity {
+public class NewProcessTestActivity extends AppCompatActivity {
 
     public static void startActivity(Context context){
-        Intent intent = new Intent(context, JniTestActivity.class);
+        Intent intent = new Intent(context, NewProcessTestActivity.class);
         context.startActivity(intent);
     }
-
-
-    private TextView tvShowInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jni_test);
+        setContentView(R.layout.activity_new_process_test);
 
         initView();
     }
 
     private void initView(){
-
-        tvShowInfo = (TextView) findViewById(R.id.tv_show_info);
-
-        findViewById(R.id.btn_show_info).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_next_activity).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 int pid = android.os.Process.myPid();
                 String processName = "";
                 ActivityManager manager = (ActivityManager) getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
@@ -47,11 +40,11 @@ public class JniTestActivity extends AppCompatActivity {
                     }
                 }
                 Log.i("lvjie", "processName="+processName);
-
-                String text = MyFirstJniTest.getString();
-                int sum = MyFirstJniTest.add(1, 2);
-                tvShowInfo.setText(text+"   "+sum);
+                JniTestActivity.startActivity(NewProcessTestActivity.this);
+                finish();
+                android.os.Process.killProcess(android.os.Process.myPid());
             }
         });
     }
+
 }
