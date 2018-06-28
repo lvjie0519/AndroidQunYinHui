@@ -90,7 +90,8 @@
             android:name=".android.newprocess.NewProcessTestActivity"
             android:process=":com.cn.lvjie" />
         <activity android:name=".android.AndroidMainActivity" />
-        <activity android:name=".android.donghua.AnimationDemoActivity"></activity>
+        <activity android:name=".android.donghua.AnimationDemoActivity" />
+        <activity android:name=".android.donghua.TweenAnimationDemoActivity"></activity>
     </application>
 
 </manifest>

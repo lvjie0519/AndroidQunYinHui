@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 
 import com.example.androidqunyinhui.R;
 import com.example.androidqunyinhui.android.donghua.AnimationDemoActivity;
+import com.example.androidqunyinhui.android.donghua.TweenAnimationDemoActivity;
 
 public class AndroidMainActivity extends AppCompatActivity {
 
@@ -29,7 +30,8 @@ public class AndroidMainActivity extends AppCompatActivity {
         findViewById(R.id.btn_animation_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AnimationDemoActivity.startActivity(AndroidMainActivity.this);
+//                AnimationDemoActivity.startActivity(AndroidMainActivity.this);
+                TweenAnimationDemoActivity.startActivity(AndroidMainActivity.this);
             }
         });
     }
