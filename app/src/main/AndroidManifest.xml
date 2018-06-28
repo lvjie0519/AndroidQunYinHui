@@ -88,8 +88,9 @@
         <activity android:name=".jni.JniTestActivity" />
         <activity
             android:name=".android.newprocess.NewProcessTestActivity"
-            android:process=":com.cn.lvjie"
-            />
+            android:process=":com.cn.lvjie" />
+        <activity android:name=".android.AndroidMainActivity" />
+        <activity android:name=".android.donghua.AnimationDemoActivity"></activity>
     </application>
 
 </manifest>

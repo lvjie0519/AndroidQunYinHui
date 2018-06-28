@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.androidqunyinhui.android.AndroidMainActivity;
 import com.example.androidqunyinhui.android.BannerTestActivity;
 import com.example.androidqunyinhui.android.PicOptimizeTestActivity;
 import com.example.androidqunyinhui.android.TextSpanTestActivity;
@@ -51,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initView(){
+
+        findViewById(R.id.btn_android_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AndroidMainActivity.startActivity(MainActivity.this);
+            }
+        });
 
         findViewById(R.id.btn_kaifayishutanshuo).setOnClickListener(new View.OnClickListener() {
             @Override
