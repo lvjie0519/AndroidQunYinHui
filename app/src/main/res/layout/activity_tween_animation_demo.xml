@@ -18,4 +18,13 @@
         android:background="@drawable/pic5"
         android:scaleType="fitXY"/>
 
+    <TextView
+        android:id="@+id/tv_zuhe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#cccccc"
+        android:padding="10dp"
+        android:text="组合动画"/>
+
 </LinearLayout>
