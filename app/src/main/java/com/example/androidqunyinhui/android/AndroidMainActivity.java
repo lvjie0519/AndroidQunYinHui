@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 
 import com.example.androidqunyinhui.R;
 import com.example.androidqunyinhui.android.donghua.AnimationDemoActivity;
+import com.example.androidqunyinhui.android.donghua.PropertyAnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.TweenAnimationDemoActivity;
 
 public class AndroidMainActivity extends AppCompatActivity {
@@ -31,7 +32,8 @@ public class AndroidMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                AnimationDemoActivity.startActivity(AndroidMainActivity.this);
-                TweenAnimationDemoActivity.startActivity(AndroidMainActivity.this);
+//                TweenAnimationDemoActivity.startActivity(AndroidMainActivity.this);
+                PropertyAnimationDemoActivity.startActivity(AndroidMainActivity.this);
             }
         });
     }

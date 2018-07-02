@@ -91,7 +91,8 @@
             android:process=":com.cn.lvjie" />
         <activity android:name=".android.AndroidMainActivity" />
         <activity android:name=".android.donghua.AnimationDemoActivity" />
-        <activity android:name=".android.donghua.TweenAnimationDemoActivity"></activity>
+        <activity android:name=".android.donghua.TweenAnimationDemoActivity" />
+        <activity android:name=".android.donghua.PropertyAnimationDemoActivity"></activity>
     </application>
 
 </manifest>
