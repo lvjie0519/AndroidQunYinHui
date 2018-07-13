@@ -56,7 +56,7 @@ public class PropertyAnimationDemoActivity extends AppCompatActivity {
         // 初始值 = 100
         // 结束值 = 500
         // ValueAnimator.ofInt()内置了整型估值器,直接采用默认的.不需要设置
-        ValueAnimator valueAnimator = ValueAnimator.ofInt(100, 500);
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(200, 800);
 
         // 步骤2：设置动画的播放各种属性
         // 设置动画运行时长:2s

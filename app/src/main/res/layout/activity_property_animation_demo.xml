@@ -12,14 +12,14 @@
         android:id="@+id/btn_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="按钮一"/>
+        android:text="ValueAnimator-java-按钮一"/>
 
     <Button
         android:id="@+id/btn_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="按钮二"/>
+        android:text="ValueAnimator-xml-按钮二"/>
 
 
 </LinearLayout>
