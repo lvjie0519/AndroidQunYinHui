@@ -2,6 +2,7 @@ package com.example.androidqunyinhui.android.donghua;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +18,8 @@ public class PropertyAnimationDemoActivity extends AppCompatActivity {
 
     private Button btn01;
     private Button btn02;
+    private Button btn03;
+    private Button btn04;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, PropertyAnimationDemoActivity.class);
@@ -34,6 +37,8 @@ public class PropertyAnimationDemoActivity extends AppCompatActivity {
     private void initView(){
         btn01 = (Button) findViewById(R.id.btn_1);
         btn02 = (Button) findViewById(R.id.btn_2);
+        btn03 = (Button) findViewById(R.id.btn_3);
+        btn04 = (Button) findViewById(R.id.btn_4);
 
         btn01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +51,20 @@ public class PropertyAnimationDemoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn2Animator();
+            }
+        });
+
+        btn03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn3Animator();
+            }
+        });
+
+        btn04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn4Animator();
             }
         });
     }
@@ -101,6 +120,28 @@ public class PropertyAnimationDemoActivity extends AppCompatActivity {
                 btn02.requestLayout();
             }
         });
+        // 启动动画
+        animator.start();
+
+    }
+
+    private void btn3Animator() {
+
+        // 表示的是:
+        // 动画作用对象是mButton
+        // 动画作用的对象的属性是X轴缩放
+        // 动画效果是:放大到2倍,再缩小到初始大小
+        ObjectAnimator animator = ObjectAnimator.ofFloat(btn03, "scaleX", 1f, 2f, 1f);
+
+        animator.setDuration(3000);
+        animator.start();
+    }
+
+    private void btn4Animator() {
+
+        // 载入XML动画
+        ObjectAnimator animator = (ObjectAnimator) AnimatorInflater.loadAnimator(this, R.animator.object_animation);
+        animator.setTarget(btn04);
         // 启动动画
         animator.start();
 
