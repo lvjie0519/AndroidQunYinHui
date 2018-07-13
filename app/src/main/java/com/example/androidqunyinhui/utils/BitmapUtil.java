@@ -1,9 +1,12 @@
 package com.example.androidqunyinhui.utils;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.util.Log;
+
+import java.io.ByteArrayOutputStream;
 
 /**
  * Created by Administrator on 2017/11/7 0007.
@@ -126,6 +129,42 @@ public class BitmapUtil {
         canvas.drawBitmap(tempBitmapT, topRect, topRect, null);
         canvas.drawBitmap(tempBitmapB, bottomRect, bottomRectT, null);
         return bitmap;
+    }
+
+    /**
+     * bitmap转换成byte数组
+     *
+     * @param bitmap
+     * @param needRecycle
+     * @return
+     */
+    public static byte[] bitmapToByteArray(Bitmap bitmap, boolean needRecycle) {
+        if (null == bitmap) {
+            return null;
+        }
+        if (bitmap.isRecycled()) {
+            return null;
+        }
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
+        if (needRecycle) {
+            bitmap.recycle();
+        }
+
+        byte[] result = output.toByteArray();
+        try {
+            output.close();
+        } catch (Exception e) {
+        }
+        return result;
+    }
+
+    public static Bitmap byteArrayToBitmap(byte[] byteArray){
+        if(byteArray == null || byteArray.length == 0){
+            return null;
+        }
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
     }
 
 }
