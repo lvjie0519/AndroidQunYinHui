@@ -73,4 +73,7 @@ dependencies {
 
     // 二维码相关
     compile 'com.google.zxing:core:3.2.1'
+
+    // 加载 gif图
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.1'
 }
