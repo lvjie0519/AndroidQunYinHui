@@ -76,4 +76,6 @@ dependencies {
 
     // 加载 gif图
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.1'
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
