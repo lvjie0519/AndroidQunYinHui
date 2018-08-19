@@ -25,7 +25,7 @@
     <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroupA
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:background="#232323"
+        android:background="#eeeeee"
         android:gravity="center">
 
         <com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroupB
@@ -39,7 +39,7 @@
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:text="事件分发"
-                android:background="@color/colorAccent"/>
+                android:background="#FF4081"/>
 
         </com.example.androidqunyinhui.kaifayishutanshuo.chapter.three.MyViewGroupB>
 

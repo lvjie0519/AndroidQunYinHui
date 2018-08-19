@@ -9,7 +9,7 @@ import android.widget.TextView;
 /**
  * Created by Administrator on 2017/6/6 0006.
  */
-public class MyView extends TextView{
+public class MyView extends android.support.v7.widget.AppCompatTextView{
 
     public MyView(Context context) {
         super(context);
@@ -30,29 +30,30 @@ public class MyView extends TextView{
         return result;
     }
 
+//    @Override
+//    public void scrollTo(int x, int y) {
+//        super.scrollTo(x, y);
+//        Log.i("MyView","scrollTo-->x="+x+"  y="+y);
+//    }
+
+    /**
+     * 在dispatchTouchEvent方法中调用，用来处理点击事件，返回结果表示是否消耗当前事件，
+     * 如果不消耗，则在同一个事件序列中，当前View无法再次接受到事件
+     * @param event
+     * @return
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = super.onTouchEvent(event);
         Log.i("MyView","onTouchEvent-->result: "+result);
-        return true;
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            Log.i("MyView","onTouchEvent-->MotionEvent.ACTION_DOWN");
+        }else if(event.getAction() == MotionEvent.ACTION_UP){
+            Log.i("MyView","onTouchEvent-->MotionEvent.ACTION_UP");
+        }else if(event.getAction() == MotionEvent.ACTION_MOVE){
+            Log.i("MyView","onTouchEvent-->MotionEvent.ACTION_MOVE");
+        }
+        return result;
     }
-
-    @Override
-    public void scrollTo(int x, int y) {
-        super.scrollTo(x, y);
-        Log.i("MyView","scrollTo-->x="+x+"  y="+y);
-    }
-
-    //    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        if(event.getAction() == MotionEvent.ACTION_DOWN){
-//            Log.i("MyView","MotionEvent.ACTION_DOWN");
-//        }else if(event.getAction() == MotionEvent.ACTION_UP){
-//            Log.i("MyView","MotionEvent.ACTION_UP");
-//        }else if(event.getAction() == MotionEvent.ACTION_MOVE){
-//            Log.i("MyView","MotionEvent.ACTION_MOVE");
-//        }
-//        return true;
-//    }
 
 }

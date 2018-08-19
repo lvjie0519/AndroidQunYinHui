@@ -58,6 +58,13 @@ public class MyViewGroupA extends LinearLayout{
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = super.onTouchEvent(event);
         Log.i("MyViewGroupA","onTouchEvent-->result: "+result);
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            Log.i("MyViewGroupA","onTouchEvent-->MotionEvent.ACTION_DOWN");
+        }else if(event.getAction() == MotionEvent.ACTION_UP){
+            Log.i("MyViewGroupA","onTouchEvent-->MotionEvent.ACTION_UP");
+        }else if(event.getAction() == MotionEvent.ACTION_MOVE){
+            Log.i("MyViewGroupA","onTouchEvent-->MotionEvent.ACTION_MOVE");
+        }
         return result;
     }
 

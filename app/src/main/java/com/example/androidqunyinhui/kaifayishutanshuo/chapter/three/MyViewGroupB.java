@@ -31,7 +31,9 @@ public class MyViewGroupB extends LinearLayout{
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        boolean result = super.dispatchTouchEvent(ev);
+//        boolean result = super.dispatchTouchEvent(ev);
+        super.dispatchTouchEvent(ev);
+        boolean result = true;
         Log.i("MyViewGroupB","dispatchTouchEvent-->result: "+result);
         return result;
     }
@@ -58,8 +60,17 @@ public class MyViewGroupB extends LinearLayout{
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        boolean result = super.onTouchEvent(event);
+//        boolean result = super.onTouchEvent(event);
+        super.onTouchEvent(event);
+        boolean result = true;
         Log.i("MyViewGroupB","onTouchEvent-->result: "+result);
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            Log.i("MyViewGroupB","onTouchEvent-->MotionEvent.ACTION_DOWN");
+        }else if(event.getAction() == MotionEvent.ACTION_UP){
+            Log.i("MyViewGroupB","onTouchEvent-->MotionEvent.ACTION_UP");
+        }else if(event.getAction() == MotionEvent.ACTION_MOVE){
+            Log.i("MyViewGroupB","onTouchEvent-->MotionEvent.ACTION_MOVE");
+        }
         return result;
     }
 
