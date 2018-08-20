@@ -20,6 +20,12 @@
                 android:layout_height="wrap_content"
                 android:text="帧动画"/>
 
+            <Button
+                android:id="@+id/btn_handler_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Handler测试"/>
+
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -11,6 +11,7 @@ import com.example.androidqunyinhui.R;
 import com.example.androidqunyinhui.android.donghua.AnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.PropertyAnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.TweenAnimationDemoActivity;
+import com.example.androidqunyinhui.android.handler.HandlerTestActivity;
 
 public class AndroidMainActivity extends AppCompatActivity {
 
@@ -34,6 +35,13 @@ public class AndroidMainActivity extends AppCompatActivity {
 //                AnimationDemoActivity.startActivity(AndroidMainActivity.this);
 //                TweenAnimationDemoActivity.startActivity(AndroidMainActivity.this);
                 PropertyAnimationDemoActivity.startActivity(AndroidMainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_handler_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HandlerTestActivity.startActivity(AndroidMainActivity.this);
             }
         });
     }

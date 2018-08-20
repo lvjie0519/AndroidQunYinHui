@@ -93,7 +93,8 @@
         <activity android:name=".android.donghua.AnimationDemoActivity" />
         <activity android:name=".android.donghua.TweenAnimationDemoActivity" />
         <activity android:name=".android.donghua.PropertyAnimationDemoActivity" />
-        <activity android:name=".android.constraintlayout.ConstraintLayoutTestActivity"></activity>
+        <activity android:name=".android.constraintlayout.ConstraintLayoutTestActivity" />
+        <activity android:name=".android.handler.HandlerTestActivity"></activity>
     </application>
 
 </manifest>
