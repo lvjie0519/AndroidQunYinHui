@@ -36,15 +36,7 @@ public class HandlerTestActivity extends AppCompatActivity {
     }
 
     private void initData(){
-        myHandler = new MyHandler(new MyHandler.CallBack() {
-            @Override
-            public void handleMessage(Message msg) {
-                Log.i(TAG, "MyHandler--handleMessage()-->" + Thread.currentThread().getName());
-                Bundle bundle = msg.getData();
-                String info = bundle.getString("mydata");
-                tvShowInfo.setText(info);
-            }
-        });
+        myHandler = new MyHandler();
     }
 
     private void initView(){
@@ -61,7 +53,8 @@ public class HandlerTestActivity extends AppCompatActivity {
         findViewById(R.id.btn_send_info).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendMsg();
+//                sendMsg();
+                myThreadTest();
             }
         });
     }
@@ -100,22 +93,68 @@ public class HandlerTestActivity extends AppCompatActivity {
 
     }
 
-//    class MyHandler extends Handler{
-//
-//        public MyHandler() {
-//        }
-//
-//        public MyHandler(Looper L) {
-//            super(L);
-//        }
-//
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            Log.i(TAG, "MyHandler--handleMessage()-->"+Thread.currentThread().getName());
-//            Bundle bundle = msg.getData();
-//            String info = bundle.getString("mydata");
-//            tvShowInfo.setText(info);
-//        }
-//    }
+    MyThread myThread = new MyThread();
+    private void myThreadTest(){
+
+        myThread.start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Log.i(TAG, "sendMsg--run()-->"+Thread.currentThread().getName());
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Message msg = new Message();
+                msg.arg1 = 1001;
+                Bundle bundle = new Bundle();
+                bundle.putString("mydata", "hello, i'am from handler");
+                msg.setData(bundle);
+                myThread.mHandler.sendMessage(msg);
+            }
+        }).start();
+    }
+
+    class MyThread extends Thread{
+
+        private MyHandler mHandler;
+
+        public MyThread() {
+        }
+
+        private void init(){
+            Looper.prepare();
+            mHandler = new MyHandler();
+            Looper.loop();
+        }
+
+        @Override
+        public void run() {
+            super.run();
+            Log.i(TAG, "MyThread--run()-->"+Thread.currentThread().getName()+" start...");
+            init();
+            Log.i(TAG, "MyThread--run()-->"+Thread.currentThread().getName()+" end...");
+        }
+    }
+
+    class MyHandler extends Handler{
+
+        public MyHandler() {
+        }
+
+        public MyHandler(Looper L) {
+            super(L);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Log.i(TAG, "MyHandler--handleMessage()-->"+Thread.currentThread().getName());
+            Bundle bundle = msg.getData();
+            String info = bundle.getString("mydata");
+            tvShowInfo.setText(info);
+        }
+    }
 }
