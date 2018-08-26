@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.Animation;
 
 import com.example.androidqunyinhui.R;
+import com.example.androidqunyinhui.android.aidl.client.CalculateClientActivity;
 import com.example.androidqunyinhui.android.donghua.AnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.PropertyAnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.TweenAnimationDemoActivity;
@@ -42,6 +43,13 @@ public class AndroidMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HandlerTestActivity.startActivity(AndroidMainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_aidl_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CalculateClientActivity.startActivity(AndroidMainActivity.this);
             }
         });
     }
