@@ -65,14 +65,21 @@ public class RetrofitMainTestActivity extends AppCompatActivity {
                 initRetrofit2();
             }
         });
+
+        findViewById(R.id.btn_retrofit_test03).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initRetrofit3();
+            }
+        });
     }
 
+    // 最普通的实现方式
     public void initRetrofit() {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASEURL)
                 .addConverterFactory(GsonConverterFactory.create())  // 增加返回值为Gson的支持(以实体类返回)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         IApiService apiService = retrofit.create(IApiService.class);  // 这里采用的是Java的动态代理模式
 
@@ -94,26 +101,9 @@ public class RetrofitMainTestActivity extends AppCompatActivity {
                 mTvContent.setText(t.getMessage());
             }
         });
-
-//        apiService.getTranslationByRx()
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Action1<Translation>() {
-//                    @Override
-//                    public void call(Translation translation) {
-//                        mProgressBar.setVisibility(View.GONE);
-//                        mTvContent.setText(translation.toString());
-//                    }
-//                }, new Action1<Throwable>() {
-//                    @Override
-//                    public void call(Throwable throwable) {
-//                        mProgressBar.setVisibility(View.GONE);
-//                        Log.e("lvjie", throwable.toString());
-//                    }
-//                });
-
     }
 
+    // 接入RX，Jackson转化的实现方式
     public void initRetrofit2(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASEURL)
@@ -125,6 +115,36 @@ public class RetrofitMainTestActivity extends AppCompatActivity {
         mProgressBar.setVisibility(View.VISIBLE);
 
         apiService.getTranslationByRxAndJackson()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<JacksonTranslation>() {
+                    @Override
+                    public void call(JacksonTranslation jacksonTranslation) {
+                        mProgressBar.setVisibility(View.GONE);
+                        mTvContent.setText(jacksonTranslation.toString());
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        mProgressBar.setVisibility(View.GONE);
+                        Log.e("lvjie", throwable.toString());
+                    }
+                });
+
+    }
+
+    // 接入RX，Jackson转化的实现方式, 由外部传递参数
+    public void initRetrofit3(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASEURL)
+                .addConverterFactory(JacksonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+        IApiService apiService = retrofit.create(IApiService.class);  // 这里采用的是Java的动态代理模式
+
+        mProgressBar.setVisibility(View.VISIBLE);
+
+        apiService.getTranslationByRxAndJacksonPro("fy", "auto", "auto", "hello%20world")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<JacksonTranslation>() {
