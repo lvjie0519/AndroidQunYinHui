@@ -21,8 +21,8 @@ public class JacksonTranslation {
         @JsonProperty("vendor")
         public String vendor;
         @JsonProperty("out")
-        public String out;
-        @JsonProperty("errNo")
+        public String out1;
+        @JsonProperty("err_no")
         public int errNo;
     }
 
@@ -33,7 +33,7 @@ public class JacksonTranslation {
         System.out.println(content.from);
         System.out.println(content.to);
         System.out.println(content.vendor);
-        System.out.println(content.out);
+        System.out.println(content.out1);
         System.out.println(content.errNo);
     }
 
