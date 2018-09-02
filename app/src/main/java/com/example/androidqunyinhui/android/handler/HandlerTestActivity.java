@@ -54,7 +54,13 @@ public class HandlerTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                sendMsg();
-                myThreadTest();
+//                myThreadTest();
+                myHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.i(TAG, "Runnable--run()..."+Thread.currentThread().getName());
+                    }
+                });
             }
         });
     }
