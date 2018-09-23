@@ -59,7 +59,6 @@ dependencies {
     compile('com.alibaba.android:vlayout:1.2.2@aar') {
         transitive = true
     }
-    compile project(':android-architecture-components')
 
     // retrofit
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
