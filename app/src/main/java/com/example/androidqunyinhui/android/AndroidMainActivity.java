@@ -13,6 +13,7 @@ import com.example.androidqunyinhui.android.donghua.AnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.PropertyAnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.TweenAnimationDemoActivity;
 import com.example.androidqunyinhui.android.handler.HandlerTestActivity;
+import com.example.androidqunyinhui.android.okhttp.OkHttpTestActivity;
 
 public class AndroidMainActivity extends AppCompatActivity {
 
@@ -50,6 +51,13 @@ public class AndroidMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CalculateClientActivity.startActivity(AndroidMainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_okhttp_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OkHttpTestActivity.startActivity(AndroidMainActivity.this);
             }
         });
     }
