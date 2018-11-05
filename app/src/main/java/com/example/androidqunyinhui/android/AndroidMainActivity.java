@@ -12,6 +12,7 @@ import com.example.androidqunyinhui.android.aidl.client.CalculateClientActivity;
 import com.example.androidqunyinhui.android.donghua.AnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.PropertyAnimationDemoActivity;
 import com.example.androidqunyinhui.android.donghua.TweenAnimationDemoActivity;
+import com.example.androidqunyinhui.android.handler.AsyncTastTestActivity;
 import com.example.androidqunyinhui.android.handler.HandlerTestActivity;
 import com.example.androidqunyinhui.android.okhttp.OkHttpTestActivity;
 
@@ -58,6 +59,13 @@ public class AndroidMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 OkHttpTestActivity.startActivity(AndroidMainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_asynctast_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AndroidMainActivity.this, AsyncTastTestActivity.class));
             }
         });
     }

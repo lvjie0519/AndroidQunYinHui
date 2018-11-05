@@ -102,7 +102,8 @@
         <activity android:name=".android.constraintlayout.ConstraintLayoutTestActivity" />
         <activity android:name=".android.handler.HandlerTestActivity" />
         <activity android:name=".android.aidl.client.CalculateClientActivity" />
-        <activity android:name=".android.okhttp.OkHttpTestActivity"></activity>
+        <activity android:name=".android.okhttp.OkHttpTestActivity" />
+        <activity android:name=".android.handler.AsyncTastTestActivity"></activity>
     </application>
 
 </manifest>
